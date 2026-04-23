@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import MagneticButton from '@/components/MagneticButton';
+import LiveTime from '@/components/LiveTime';
 
 const nav = [
   { href: '/services', label: 'Услуги' },
@@ -47,6 +48,7 @@ export default function Header() {
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">
+          <LiveTime />
           {nav.map((n) => {
             const active = pathname === n.href;
             return (

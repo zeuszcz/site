@@ -61,38 +61,54 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
         </div>
       </section>
 
-      {work.coverUrl && (
-        <section className="pb-20">
-          <div className="container-x">
-            <Reveal>
-              <div className="relative aspect-video overflow-hidden rounded-3xl border border-line bg-surface2">
-                <img src={work.coverUrl} alt={work.title} className="h-full w-full object-cover" />
+      <section className="pb-24 md:pb-32">
+        <div className="container-x grid lg:grid-cols-[1fr_1.1fr] gap-10 md:gap-16 items-start">
+          {work.coverUrl && (
+            <div className="lg:sticky lg:top-28">
+              <Reveal>
+                <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-line bg-surface2">
+                  <img
+                    src={work.coverUrl}
+                    alt={work.title}
+                    style={{ viewTransitionName: `work-cover-${work.id}` } as React.CSSProperties}
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+              </Reveal>
+            </div>
+          )}
+          <div className="max-w-2xl">
+            <Reveal delay={0.1}>
+              <div className="flex items-center gap-6 mb-10 text-[10px] font-mono uppercase tracking-[0.3em] text-muted">
+                <span>О проекте</span>
+                <span className="h-px flex-1 bg-line" />
+                <span>{new Date(work.createdAt).getFullYear()}</span>
+              </div>
+            </Reveal>
+            <Reveal delay={0.15}>
+              <div className="whitespace-pre-wrap text-lg md:text-xl leading-[1.7] text-fg">
+                {work.description}
               </div>
             </Reveal>
           </div>
-        </section>
-      )}
-
-      <section className="pb-24 md:pb-32">
-        <div className="container-x max-w-3xl">
-          <Reveal>
-            <div className="whitespace-pre-wrap text-lg leading-relaxed text-fg">
-              {work.description}
-            </div>
-          </Reveal>
         </div>
       </section>
 
       {work.images.length > 0 && (
-        <section className="pb-24">
-          <div className="container-x grid sm:grid-cols-2 gap-4">
-            {work.images.map((img, i) => (
-              <Reveal key={i} delay={i * 0.05}>
-                <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-line bg-surface2">
-                  <img src={img.url} alt={img.alt || work.title} className="h-full w-full object-cover" />
-                </div>
-              </Reveal>
-            ))}
+        <section className="pb-24 border-t border-line pt-24">
+          <div className="container-x">
+            <Reveal>
+              <div className="eyebrow mb-10">Галерея</div>
+            </Reveal>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {work.images.map((img, i) => (
+                <Reveal key={i} delay={i * 0.05}>
+                  <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-line bg-surface2">
+                    <img src={img.url} alt={img.alt || work.title} className="h-full w-full object-cover" />
+                  </div>
+                </Reveal>
+              ))}
+            </div>
           </div>
         </section>
       )}
@@ -109,7 +125,7 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {related.map((r, i) => (
                 <Reveal key={r.id} delay={i * 0.08}>
-                  <Link href={`/works/${r.slug}`} className="block group">
+                  <Link href={`/works/${r.slug}`} className="block group" data-cursor-hover data-cursor-label="VIEW">
                     {r.coverUrl && (
                       <div className="aspect-[4/5] overflow-hidden bg-surface2 rounded-2xl border border-line">
                         <img src={r.coverUrl} alt={r.title} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.06]" />

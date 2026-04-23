@@ -58,13 +58,18 @@ export default function Cursor() {
           <motion.div
             key={label}
             style={{ x: sx, y: sy }}
-            initial={{ opacity: 0, scale: 0.85 }}
+            initial={{ opacity: 0, scale: 0.75 }}
             animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.85 }}
-            transition={{ duration: 0.22 }}
-            className="fixed top-0 left-0 pointer-events-none z-[202] font-mono text-[10px] tracking-[0.2em] uppercase text-bg bg-fg px-3 py-1.5 rounded-full whitespace-nowrap"
+            exit={{ opacity: 0, scale: 0.75 }}
+            transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
+            className="fixed top-0 left-0 pointer-events-none z-[202]"
           >
-            <span className="block translate-x-[18px] translate-y-[12px]">{label}</span>
+            <div
+              className="font-mono text-[10px] tracking-[0.25em] uppercase text-bg bg-fg rounded-full whitespace-nowrap"
+              style={{ marginLeft: 22, marginTop: 18, padding: '8px 14px' }}
+            >
+              {label}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

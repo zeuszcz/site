@@ -18,8 +18,14 @@ export default async function HomePage() {
     <>
       <Hero />
 
-      <section className="relative py-10 md:py-14 border-y border-line bg-surface2">
-        <Marquee items={brands} baseSpeed={60} />
+      <section className="relative py-8 md:py-10 border-y border-line bg-surface2 flex flex-col gap-3 md:gap-4">
+        <Marquee items={brands} baseSpeed={60} direction="left" />
+        <Marquee
+          items={['Брендинг', 'UI/UX', 'Веб-разработка', 'Мобильные приложения', 'Дизайн-системы', 'Перформанс']}
+          baseSpeed={45}
+          direction="right"
+          size="sm"
+        />
       </section>
 
       <section id="services" className="relative py-28 md:py-40 border-b border-line">

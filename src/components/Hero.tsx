@@ -10,6 +10,8 @@ export default function Hero() {
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] });
   const y = useTransform(scrollYProgress, [0, 1], [0, 180]);
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.92]);
+  const bgTextX = useTransform(scrollYProgress, [0, 1], ['0%', '-20%']);
 
   const mx = useMotionValue(0);
   const my = useMotionValue(0);
@@ -21,8 +23,8 @@ export default function Hero() {
     const onMove = (e: MouseEvent) => {
       const w = window.innerWidth;
       const h = window.innerHeight;
-      mx.set((e.clientX / w - 0.5) * 24);
-      my.set((e.clientY / h - 0.5) * 16);
+      mx.set((e.clientX / w - 0.5) * 20);
+      my.set((e.clientY / h - 0.5) * 14);
     };
     window.addEventListener('mousemove', onMove, { passive: true });
     return () => window.removeEventListener('mousemove', onMove);
@@ -38,7 +40,23 @@ export default function Hero() {
         </div>
       </div>
 
-      <motion.div style={{ y, opacity }} className="relative container-x w-full">
+      <motion.div
+        aria-hidden
+        style={{ x: bgTextX }}
+        className="absolute inset-x-0 top-[35%] -z-0 pointer-events-none overflow-hidden select-none"
+      >
+        <motion.div
+          animate={{ x: ['0%', '-50%'] }}
+          transition={{ duration: 60, repeat: Infinity, ease: 'linear' }}
+          className="flex gap-24 whitespace-nowrap font-display font-medium text-[22vw] leading-none tracking-[-0.04em] text-fg/[0.04]"
+        >
+          {Array.from({ length: 6 }).map((_, i) => (
+            <span key={i}>STUDIO</span>
+          ))}
+        </motion.div>
+      </motion.div>
+
+      <motion.div style={{ y, opacity, scale }} className="relative container-x w-full z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -50,7 +68,7 @@ export default function Hero() {
 
         <motion.h1
           style={{ x: smx, y: smy }}
-          className="h-display text-[13vw] md:text-[9vw] lg:text-[7.5rem] leading-[0.92] tracking-[-0.035em] max-w-6xl text-fg"
+          className="h-display text-[13vw] md:text-[9vw] lg:text-[7.5rem] leading-[0.95] tracking-[-0.035em] max-w-6xl text-fg"
         >
           <SplitText text="Создаём продукты," speed={0.022} />
           <br className="hidden md:inline" />

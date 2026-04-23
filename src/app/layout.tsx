@@ -8,6 +8,7 @@ import PageTransition from '@/components/PageTransition';
 import ScrollProgress from '@/components/ScrollProgress';
 import Cursor from '@/components/Cursor';
 import BackToTop from '@/components/BackToTop';
+import Loader from '@/components/Loader';
 
 const inter = Inter({ subsets: ['latin', 'cyrillic'], variable: '--font-sans', display: 'swap' });
 const manrope = Manrope({ subsets: ['latin', 'cyrillic'], variable: '--font-display', display: 'swap' });
@@ -35,6 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ru" className={`${inter.variable} ${manrope.variable} ${mono.variable}`}>
       <body className="paper font-sans bg-bg text-fg">
+        <Loader />
         <SmoothScroll />
         <ScrollProgress />
         <Cursor />
