@@ -5,7 +5,7 @@ import SplitText from '@/components/SplitText';
 import Team from '@/components/Team';
 import Awards from '@/components/Awards';
 
-export const metadata = { title: 'О нас' };
+export const metadata = { title: 'Студия' };
 
 const values = [
   { title: 'Сначала задача', body: 'Начинаем с проблемы клиента, а не с готового решения. Решаем именно то, что нужно.' },
@@ -15,77 +15,71 @@ const values = [
 ];
 
 const milestones = [
-  { year: '2020', title: 'Основана студия',                  body: 'Артём Стенвик собрал первую команду из 3 человек. Первый проект — айдентика локального кафе.' },
-  { year: '2022', title: 'Первый международный клиент',      body: 'Выиграли питч на проект из Берлина. Расширились до 8 человек.' },
-  { year: '2024', title: 'Вошли в топ-20 digital-студий РФ', body: 'Рейтинг Ruward. Запустили направление дизайн-систем для enterprise.' },
-  { year: '2026', title: 'Команда 14 человек · 50+ проектов', body: 'Работаем с клиентами из 8 стран. Открыт найм на Lead Designer.' },
+  { year: '2020', title: 'Основана студия', body: 'Артём Стенвик собрал первую команду из 3 человек. Первый проект — айдентика локального кафе.' },
+  { year: '2022', title: 'Первый международный клиент', body: 'Выиграли питч на проект из Берлина. Расширились до 8 человек.' },
+  { year: '2024', title: 'В топ-20 digital-студий РФ', body: 'Рейтинг Ruward. Запустили направление дизайн-систем для enterprise.' },
+  { year: '2026', title: 'Команда 14 человек', body: 'Работаем с клиентами из 8 стран. Открыт найм на Lead Designer.' },
 ];
 
 export default function AboutPage() {
   return (
     <>
-      <section className="pt-40 pb-24">
+      <section className="pt-40 md:pt-48 pb-24 md:pb-32">
         <div className="container-x">
-          <Reveal><span className="eyebrow">О студии</span></Reveal>
-          <h1 className="h-display mt-8 text-6xl md:text-8xl max-w-5xl tracking-[-0.03em] text-fg">
+          <Reveal><span className="eyebrow">Студия</span></Reveal>
+          <h1 className="h-display mt-8 text-[clamp(3rem,8vw,7rem)] leading-[1.02] max-w-5xl tracking-[-0.035em] text-fg">
             <SplitText text="Команда, которая" speed={0.02} />
             <br />
-            <SplitText text="звучит чётко" speed={0.02} delay={0.25} italic className="text-muted" />
+            <SplitText text="звучит чётко" speed={0.02} delay={0.22} italic className="text-muted" />
           </h1>
-          <Reveal delay={0.2}>
-            <p className="mt-10 max-w-2xl text-lg text-muted leading-relaxed">
+          <Reveal delay={0.25}>
+            <p className="mt-10 max-w-2xl text-lg md:text-xl text-muted leading-[1.55]">
               Мы собрали сильных дизайнеров, разработчиков и продактов. Делаем продукты, которые решают задачи и красиво это показывают.
             </p>
           </Reveal>
         </div>
       </section>
 
-      <section className="pb-24">
+      <section className="pb-28">
         <div className="container-x grid md:grid-cols-2 gap-px bg-line border border-line rounded-2xl overflow-hidden">
           {values.map((v, i) => (
-            <Reveal key={i} delay={i * 0.08}>
-              <div className="bg-surface p-10 md:p-12 h-full">
-                <div className="font-mono text-[10px] tracking-[0.3em] text-muted mb-6">0{i + 1} / 0{values.length}</div>
-                <h3 className="h-display text-3xl mb-4">{v.title}</h3>
-                <p className="text-muted leading-relaxed">{v.body}</p>
+            <Reveal key={i} delay={i * 0.06}>
+              <div className="bg-surface p-10 md:p-14 h-full">
+                <h3 className="h-display text-2xl md:text-3xl mb-4">{v.title}</h3>
+                <p className="text-muted leading-[1.6]">{v.body}</p>
               </div>
             </Reveal>
           ))}
         </div>
       </section>
 
-      <section className="pb-28 border-t border-line pt-24">
+      <section className="pb-28 pt-28 border-t border-line">
         <div className="container-x">
-          <Reveal className="mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-            <div>
-              <span className="eyebrow">Команда</span>
-              <h2 className="h-display mt-6 text-5xl md:text-6xl">
-                14 человек <span className="italic text-muted">в студии</span>
-              </h2>
-            </div>
-            <p className="text-muted max-w-sm">Дизайнеры, разработчики, продакты и стратеги. Наведи на карточку — узнаешь больше.</p>
+          <Reveal className="mb-16 md:mb-20 max-w-3xl">
+            <span className="eyebrow">Команда</span>
+            <h2 className="h-display mt-6 text-[clamp(2.5rem,5.5vw,5rem)] leading-[1.05] tracking-[-0.025em]">
+              14 человек <span className="italic text-muted">в студии</span>
+            </h2>
           </Reveal>
           <Team />
         </div>
       </section>
 
-      <section className="pb-28 border-t border-line pt-24 bg-surface2">
+      <section className="pb-28 pt-28 border-t border-line bg-surface2">
         <div className="container-x">
-          <Reveal className="mb-12 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-            <div>
-              <span className="eyebrow">Путь студии</span>
-              <h2 className="h-display mt-6 text-5xl md:text-6xl">
-                От 3 до 14 <span className="italic text-muted">за 6 лет</span>
-              </h2>
-            </div>
+          <Reveal className="mb-16 md:mb-20 max-w-3xl">
+            <span className="eyebrow">Путь студии</span>
+            <h2 className="h-display mt-6 text-[clamp(2.5rem,5.5vw,5rem)] leading-[1.05] tracking-[-0.025em]">
+              От 3 до 14 <span className="italic text-muted">за 6 лет</span>
+            </h2>
           </Reveal>
           <div className="grid md:grid-cols-4 gap-px bg-line border border-line rounded-2xl overflow-hidden">
             {milestones.map((m, i) => (
-              <Reveal key={m.year} delay={i * 0.08}>
+              <Reveal key={m.year} delay={i * 0.06}>
                 <div className="bg-surface p-8 md:p-10 h-full">
                   <div className="font-mono text-sm text-fg mb-4">{m.year}</div>
-                  <h3 className="h-display text-xl md:text-2xl mb-3">{m.title}</h3>
-                  <p className="text-sm text-muted leading-relaxed">{m.body}</p>
+                  <h3 className="h-display text-xl mb-3 leading-[1.2]">{m.title}</h3>
+                  <p className="text-sm text-muted leading-[1.6]">{m.body}</p>
                 </div>
               </Reveal>
             ))}
@@ -93,40 +87,43 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="pb-28 border-t border-line pt-24">
+      <section className="pb-28 pt-28 border-t border-line">
         <div className="container-x">
-          <Reveal className="mb-12 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-            <div>
-              <span className="eyebrow">Награды</span>
-              <h2 className="h-display mt-6 text-5xl md:text-6xl">
-                Нас заметили <span className="italic text-muted">здесь</span>
-              </h2>
-            </div>
-            <p className="text-muted max-w-sm">Семь наград за последние 4 года в digital и brand номинациях.</p>
+          <Reveal className="mb-16 md:mb-20 max-w-3xl">
+            <span className="eyebrow">Награды</span>
+            <h2 className="h-display mt-6 text-[clamp(2.5rem,5.5vw,5rem)] leading-[1.05] tracking-[-0.025em]">
+              Нас заметили <span className="italic text-muted">здесь</span>
+            </h2>
           </Reveal>
           <Awards />
         </div>
       </section>
 
-      <section className="pb-24 md:pb-32 border-t border-line pt-24 bg-surface2">
+      <section className="pb-28 pt-28 border-t border-line bg-surface2">
         <div className="container-x">
-          <Reveal className="mb-12 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-            <div>
-              <span className="eyebrow">FAQ</span>
-              <h2 className="h-display mt-6 text-5xl md:text-6xl">
-                Часто <span className="italic text-muted">спрашивают</span>
-              </h2>
-            </div>
-            <p className="text-muted max-w-sm">Если нужного ответа нет — напишите нам, ответим в течение 24 часов.</p>
+          <Reveal className="mb-16 md:mb-20 max-w-3xl">
+            <span className="eyebrow">FAQ</span>
+            <h2 className="h-display mt-6 text-[clamp(2.5rem,5.5vw,5rem)] leading-[1.05] tracking-[-0.025em]">
+              Часто <span className="italic text-muted">спрашивают</span>
+            </h2>
           </Reveal>
           <FAQ />
         </div>
       </section>
 
-      <section className="py-24 border-t border-line">
-        <div className="container-x flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-          <h2 className="h-display text-4xl md:text-5xl">Расскажите о вашем <span className="italic text-muted">проекте</span></h2>
-          <MagneticButton href="/contact" className="btn-primary self-start md:self-auto">Связаться</MagneticButton>
+      <section className="border-t border-line py-28 md:py-40">
+        <div className="container-x max-w-4xl text-center">
+          <Reveal>
+            <h2 className="h-display text-[clamp(2.5rem,6vw,5.5rem)] leading-[1.05] tracking-[-0.03em]">
+              Расскажите о вашем <br />
+              <span className="italic text-muted">проекте</span>
+            </h2>
+          </Reveal>
+          <Reveal delay={0.15}>
+            <div className="mt-12">
+              <MagneticButton href="/contact" className="btn-primary">Связаться</MagneticButton>
+            </div>
+          </Reveal>
         </div>
       </section>
     </>

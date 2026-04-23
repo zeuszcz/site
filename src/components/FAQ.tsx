@@ -10,7 +10,7 @@ const faq = [
   },
   {
     q: 'Как устроен процесс?',
-    a: 'Дискавери → дизайн → согласование → разработка → тестирование → запуск. Раз в неделю — демо, где показываем прогресс и принимаем правки. Никаких «чёрных ящиков».',
+    a: 'Дискавери → дизайн → согласование → разработка → тестирование → запуск. Раз в неделю — демо, где показываем прогресс и принимаем правки.',
   },
   {
     q: 'Сколько времени занимает проект?',
@@ -41,16 +41,10 @@ export default function FAQ() {
           <button
             key={i}
             onClick={() => setOpen(isOpen ? null : i)}
-            className="py-8 md:py-10 text-left flex items-start justify-between gap-6 group transition-colors hover:bg-surface/40 px-2 -mx-2 rounded-lg"
-            data-cursor-hover
+            className="py-8 md:py-10 text-left flex items-start justify-between gap-6 group transition-colors"
           >
             <div className="flex-1">
-              <div className="flex items-center gap-5">
-                <span className="font-mono text-[10px] tracking-[0.3em] text-muted hidden md:inline">
-                  0{i + 1}
-                </span>
-                <div className="h-display text-2xl md:text-3xl">{item.q}</div>
-              </div>
+              <div className="h-display text-xl md:text-2xl leading-[1.3]">{item.q}</div>
               <AnimatePresence initial={false}>
                 {isOpen && (
                   <motion.div
@@ -58,10 +52,10 @@ export default function FAQ() {
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: 'auto', opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                    transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
                     className="overflow-hidden"
                   >
-                    <p className="pt-6 pl-0 md:pl-[60px] max-w-2xl text-base md:text-lg text-muted leading-relaxed">
+                    <p className="pt-5 max-w-2xl text-base md:text-[17px] text-muted leading-[1.6]">
                       {item.a}
                     </p>
                   </motion.div>
@@ -71,7 +65,7 @@ export default function FAQ() {
             <motion.div
               animate={{ rotate: isOpen ? 45 : 0 }}
               transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-              className="shrink-0 mt-1"
+              className="shrink-0 mt-1 text-muted group-hover:text-fg transition-colors"
             >
               <Plus size={22} strokeWidth={1.2} />
             </motion.div>

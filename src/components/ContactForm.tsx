@@ -38,14 +38,14 @@ export default function ContactForm() {
       <motion.div
         initial={{ opacity: 0, scale: 0.96 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="text-center py-16"
+        className="py-16"
       >
-        <div className="inline-flex h-14 w-14 items-center justify-center rounded-full border border-fg text-fg mb-8">
-          <Check size={24} strokeWidth={1.5} />
+        <div className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-fg text-fg mb-8">
+          <Check size={22} strokeWidth={1.5} />
         </div>
-        <h3 className="h-display text-3xl mb-3">Спасибо.</h3>
-        <p className="text-muted">Мы получили ваше сообщение и скоро ответим.</p>
-        <button onClick={() => setStatus('idle')} className="mt-6 text-sm text-fg underline underline-offset-4 hover:text-muted">
+        <h3 className="h-display text-3xl md:text-4xl mb-4">Спасибо.</h3>
+        <p className="text-muted text-lg">Мы получили ваше сообщение и скоро ответим.</p>
+        <button onClick={() => setStatus('idle')} className="mt-8 text-sm text-fg underline underline-offset-4 hover:text-muted">
           Отправить ещё одно
         </button>
       </motion.div>
@@ -53,17 +53,29 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="flex flex-col gap-5">
+    <form onSubmit={onSubmit} className="flex flex-col gap-6">
       <Field label="Имя" name="name" required />
       <Field label="Email" name="email" type="email" required />
       <Field label="Телефон (необязательно)" name="phone" type="tel" />
       <div>
-        <label htmlFor="message" className="text-[10px] uppercase tracking-[0.22em] text-muted mb-2 block">О проекте</label>
-        <textarea id="message" name="message" required rows={5} maxLength={5000}
-                  className="w-full bg-transparent border-b border-line focus:border-fg outline-none py-3 text-base transition-colors resize-none" />
+        <label htmlFor="message" className="text-[11px] uppercase tracking-[0.22em] text-muted mb-3 block">
+          О проекте
+        </label>
+        <textarea
+          id="message"
+          name="message"
+          required
+          rows={5}
+          maxLength={5000}
+          className="w-full bg-transparent border-b border-line focus:border-fg outline-none py-3 text-[17px] transition-colors resize-none"
+        />
       </div>
       {error && <p className="text-sm text-accent2">{error}</p>}
-      <button type="submit" disabled={status === 'sending'} className="btn-primary mt-4 self-start disabled:opacity-50 disabled:cursor-not-allowed">
+      <button
+        type="submit"
+        disabled={status === 'sending'}
+        className="btn-primary mt-4 self-start disabled:opacity-50 disabled:cursor-not-allowed"
+      >
         {status === 'sending' ? 'Отправка…' : <>Отправить <ArrowRight size={14} /></>}
       </button>
     </form>
@@ -73,9 +85,15 @@ export default function ContactForm() {
 function Field({ label, name, type = 'text', required }: { label: string; name: string; type?: string; required?: boolean }) {
   return (
     <div>
-      <label htmlFor={name} className="text-[10px] uppercase tracking-[0.22em] text-muted mb-2 block">{label}</label>
-      <input id={name} name={name} type={type} required={required} maxLength={200}
-             className="w-full bg-transparent border-b border-line focus:border-fg outline-none py-3 text-base transition-colors" />
+      <label htmlFor={name} className="text-[11px] uppercase tracking-[0.22em] text-muted mb-3 block">{label}</label>
+      <input
+        id={name}
+        name={name}
+        type={type}
+        required={required}
+        maxLength={200}
+        className="w-full bg-transparent border-b border-line focus:border-fg outline-none py-3 text-[17px] transition-colors"
+      />
     </div>
   );
 }

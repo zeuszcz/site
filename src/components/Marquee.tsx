@@ -7,17 +7,22 @@ type Props = {
   baseSpeed?: number;
   className?: string;
   direction?: 'left' | 'right';
-  size?: 'sm' | 'lg';
+  size?: 'sm' | 'md' | 'lg';
 };
 
-export default function Marquee({ items, baseSpeed = 60, className = '', direction = 'left', size = 'lg' }: Props) {
+const SIZES = {
+  sm: 'text-xl md:text-2xl',
+  md: 'text-2xl md:text-4xl',
+  lg: 'text-3xl md:text-5xl',
+};
+
+export default function Marquee({ items, baseSpeed = 40, className = '', direction = 'left', size = 'md' }: Props) {
   const ref = useRef<HTMLDivElement>(null);
   const baseX = useMotionValue(0);
   const { scrollY } = useScroll();
   const velocity = useVelocity(scrollY);
   const smoothVelocity = useSpring(velocity, { damping: 60, stiffness: 300 });
-  const velocityFactor = useTransform(smoothVelocity, [0, 2000], [0, 5], { clamp: false });
-  const skewX = useTransform(smoothVelocity, [-1500, 1500], [4, -4]);
+  const velocityFactor = useTransform(smoothVelocity, [0, 2000], [0, 3], { clamp: false });
   const x = useTransform(baseX, (v) => `${wrap(-25, -75, v)}%`);
 
   const directionFactor = useRef(direction === 'left' ? -1 : 1);
@@ -27,19 +32,14 @@ export default function Marquee({ items, baseSpeed = 60, className = '', directi
     baseX.set(baseX.get() + moveBy);
   });
 
-  const textSize = size === 'sm'
-    ? 'text-2xl md:text-4xl lg:text-5xl'
-    : 'text-4xl md:text-6xl lg:text-7xl';
+  const textSize = SIZES[size];
 
   return (
     <div ref={ref} className={`relative overflow-hidden ${className}`}>
-      <motion.div style={{ x, skewX }} className="flex gap-16 whitespace-nowrap will-change-transform">
+      <motion.div style={{ x }} className="flex gap-20 whitespace-nowrap will-change-transform">
         {[...items, ...items, ...items, ...items].map((item, i) => (
-          <span key={i} className="flex items-center gap-16 shrink-0">
-            <span className={`font-display ${textSize} text-fg tracking-[-0.02em]`}>
-              {item}
-            </span>
-            <span className={`text-muted ${textSize}`}>·</span>
+          <span key={i} className={`font-display ${textSize} text-muted tracking-[-0.01em] shrink-0`}>
+            {item}
           </span>
         ))}
       </motion.div>

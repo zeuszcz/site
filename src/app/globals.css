@@ -8,13 +8,10 @@
   --font-mono: 'JetBrains Mono', monospace;
 }
 
-@view-transition {
-  navigation: auto;
-}
-
+@view-transition { navigation: auto; }
 ::view-transition-old(root),
 ::view-transition-new(root) {
-  animation-duration: 0.55s;
+  animation-duration: 0.5s;
   animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -29,17 +26,12 @@ html, body {
   scroll-behavior: smooth;
 }
 
-html.lenis, html.lenis body {
-  height: auto;
-}
+html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
 .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
 .lenis.lenis-stopped { overflow: hidden; }
 
-::selection {
-  background: #141414;
-  color: #FAF8F5;
-}
+::selection { background: #141414; color: #FAF8F5; }
 
 ::-webkit-scrollbar { width: 10px; height: 10px; }
 ::-webkit-scrollbar-track { background: #FAF8F5; }
@@ -52,41 +44,30 @@ html.lenis, html.lenis body {
   }
 
   .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-[13px] font-medium
            transition-all duration-300 ease-out will-change-transform;
   }
   .btn-primary {
-    @apply btn bg-fg text-bg hover:bg-accent hover:scale-[1.02] active:scale-[0.98];
+    @apply btn bg-fg text-bg hover:scale-[1.02] active:scale-[0.98];
   }
   .btn-ghost {
-    @apply btn border border-line text-fg hover:border-fg hover:bg-surface;
+    @apply btn border border-line text-fg hover:border-fg;
   }
 
   .card {
-    @apply relative overflow-hidden rounded-2xl border border-line bg-surface transition-all duration-500;
-  }
-  .card:hover {
-    @apply border-fg/20 shadow-[0_20px_50px_-25px_rgba(20,20,20,0.15)];
+    @apply relative rounded-2xl border border-line bg-surface transition-all duration-500;
   }
 
   .eyebrow {
-    @apply inline-flex items-center gap-3 text-xs uppercase tracking-[0.22em] text-muted;
+    @apply inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.24em] text-muted;
   }
   .eyebrow::before {
     content: '';
-    @apply inline-block h-[1px] w-10 bg-fg;
+    @apply inline-block h-[1px] w-8 bg-fg;
   }
 
   .h-display {
-    @apply font-display font-medium leading-[0.98] tracking-[-0.02em];
-  }
-
-  .text-gradient {
-    @apply bg-gradient-to-br from-fg via-fg to-muted bg-clip-text text-transparent;
-  }
-
-  .hairline {
-    @apply border-line;
+    @apply font-display font-medium leading-[1.02] tracking-[-0.025em];
   }
 
   .paper {
@@ -97,20 +78,9 @@ html.lenis, html.lenis body {
     position: fixed;
     inset: 0;
     pointer-events: none;
-    opacity: 0.035;
+    opacity: 0.02;
     z-index: 1;
     mix-blend-mode: multiply;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    animation: noise-drift 8s steps(6) infinite;
   }
-}
-
-@keyframes noise-drift {
-  0%   { background-position: 0 0; }
-  16%  { background-position: -40px 20px; }
-  33%  { background-position: 20px -30px; }
-  50%  { background-position: 50px 40px; }
-  66%  { background-position: -30px -20px; }
-  83%  { background-position: 10px 50px; }
-  100% { background-position: 0 0; }
 }

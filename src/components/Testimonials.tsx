@@ -1,7 +1,7 @@
 'use client';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import { ArrowLeft, ArrowRight, Quote } from 'lucide-react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { testimonials } from '@/lib/content';
 
 export default function Testimonials() {
@@ -11,7 +11,7 @@ export default function Testimonials() {
 
   useEffect(() => {
     if (paused) return;
-    const id = setInterval(() => setI((x) => (x + 1) % testimonials.length), 7000);
+    const id = setInterval(() => setI((x) => (x + 1) % testimonials.length), 8000);
     return () => clearInterval(id);
   }, [paused]);
 
@@ -20,81 +20,63 @@ export default function Testimonials() {
 
   return (
     <div
-      className="relative"
+      className="relative max-w-4xl mx-auto"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      <div className="grid lg:grid-cols-[1fr_auto] gap-10 md:gap-16 items-start">
-        <div className="relative min-h-[260px] md:min-h-[280px]">
-          <Quote size={48} strokeWidth={1} className="text-fg/20 mb-6" />
-          <AnimatePresence mode="wait">
-            <motion.blockquote
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              className="h-display text-2xl md:text-4xl leading-[1.2] text-fg"
-            >
-              «{t.quote}»
-            </motion.blockquote>
-          </AnimatePresence>
+      <div className="min-h-[320px] md:min-h-[360px]">
+        <AnimatePresence mode="wait">
+          <motion.blockquote
+            key={i}
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -16 }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            className="h-display text-xl md:text-3xl leading-[1.35] text-fg"
+          >
+            «{t.quote}»
+          </motion.blockquote>
+        </AnimatePresence>
 
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={`${i}-author`}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.4, delay: 0.1 }}
-              className="mt-10 flex items-center gap-4"
-            >
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-fg text-bg font-display font-semibold text-sm">
-                {t.initials}
-              </div>
-              <div>
-                <div className="font-display text-base">{t.author}</div>
-                <div className="text-sm text-muted">{t.role} · {t.company}</div>
-              </div>
-            </motion.div>
-          </AnimatePresence>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={`${i}-author`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
+            className="mt-12 flex items-center gap-4"
+          >
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-fg text-bg font-display font-medium text-sm">
+              {t.initials}
+            </div>
+            <div>
+              <div className="font-display text-[15px]">{t.author}</div>
+              <div className="text-[13px] text-muted">{t.role} · {t.company}</div>
+            </div>
+          </motion.div>
+        </AnimatePresence>
+      </div>
+
+      <div className="mt-12 flex items-center justify-between">
+        <div className="font-mono text-[11px] tracking-[0.25em] uppercase text-muted tabular-nums">
+          {String(i + 1).padStart(2, '0')} — {String(testimonials.length).padStart(2, '0')}
         </div>
-
-        <div className="flex lg:flex-col items-start gap-6 lg:min-w-[120px]">
-          <div className="flex items-center gap-2">
-            <button
-              onClick={prev}
-              aria-label="Предыдущий"
-              data-cursor-hover
-              className="h-11 w-11 rounded-full border border-line hover:border-fg hover:bg-surface transition-colors flex items-center justify-center"
-            >
-              <ArrowLeft size={16} strokeWidth={1.5} />
-            </button>
-            <button
-              onClick={next}
-              aria-label="Следующий"
-              data-cursor-hover
-              className="h-11 w-11 rounded-full border border-line hover:border-fg hover:bg-surface transition-colors flex items-center justify-center"
-            >
-              <ArrowRight size={16} strokeWidth={1.5} />
-            </button>
-          </div>
-
-          <div className="font-mono text-[10px] tracking-[0.25em] uppercase text-muted tabular-nums">
-            {String(i + 1).padStart(2, '0')} / {String(testimonials.length).padStart(2, '0')}
-          </div>
-
-          <div className="flex lg:flex-col gap-1.5 w-full">
-            {testimonials.map((_, ix) => (
-              <button
-                key={ix}
-                onClick={() => setI(ix)}
-                aria-label={`К отзыву ${ix + 1}`}
-                data-cursor-hover
-                className={`h-0.5 flex-1 lg:flex-initial lg:w-full transition-colors ${ix === i ? 'bg-fg' : 'bg-line'}`}
-              />
-            ))}
-          </div>
+        <div className="flex items-center gap-2">
+          <button
+            onClick={prev}
+            aria-label="Предыдущий"
+            className="h-10 w-10 rounded-full border border-line hover:border-fg transition-colors flex items-center justify-center"
+          >
+            <ArrowLeft size={14} strokeWidth={1.5} />
+          </button>
+          <button
+            onClick={next}
+            aria-label="Следующий"
+            className="h-10 w-10 rounded-full border border-line hover:border-fg transition-colors flex items-center justify-center"
+          >
+            <ArrowRight size={14} strokeWidth={1.5} />
+          </button>
         </div>
       </div>
     </div>

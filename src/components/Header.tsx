@@ -5,13 +5,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import MagneticButton from '@/components/MagneticButton';
-import LiveTime from '@/components/LiveTime';
 
 const nav = [
   { href: '/services', label: 'Услуги' },
   { href: '/works', label: 'Работы' },
   { href: '/insights', label: 'Инсайты' },
-  { href: '/about', label: 'О нас' },
+  { href: '/about', label: 'Студия' },
   { href: '/contact', label: 'Контакты' },
 ];
 
@@ -39,24 +38,23 @@ export default function Header() {
       }`}
     >
       <div className="container-x flex items-center justify-between h-16 md:h-20">
-        <Link href="/" className="group flex items-center gap-2.5">
-          <span className="relative flex h-7 w-7 items-center justify-center rounded-full bg-fg">
+        <Link href="/" className="flex items-center gap-2.5">
+          <span className="flex h-7 w-7 items-center justify-center rounded-full bg-fg">
             <span className="text-bg font-display font-semibold text-xs">i</span>
           </span>
-          <span className="font-display font-medium tracking-tight text-base">
+          <span className="font-display font-medium tracking-tight text-[15px]">
             innertalk<span className="text-muted"> studio</span>
           </span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">
-          <LiveTime />
           {nav.map((n) => {
-            const active = pathname === n.href;
+            const active = pathname === n.href || (n.href !== '/' && pathname.startsWith(n.href));
             return (
               <Link
                 key={n.href}
                 href={n.href}
-                className={`relative text-sm transition-colors ${active ? 'text-fg' : 'text-muted hover:text-fg'}`}
+                className={`relative text-[13px] transition-colors ${active ? 'text-fg' : 'text-muted hover:text-fg'}`}
               >
                 {n.label}
                 {active && (
@@ -72,7 +70,7 @@ export default function Header() {
         </nav>
 
         <div className="hidden md:inline-flex">
-          <MagneticButton href="/contact" className="btn-primary text-xs">
+          <MagneticButton href="/contact" className="btn-primary text-[12px] py-3 px-6">
             Обсудить проект
           </MagneticButton>
         </div>
@@ -81,7 +79,6 @@ export default function Header() {
           onClick={() => setOpen(!open)}
           className="md:hidden p-2 rounded-full border border-line"
           aria-label="Меню"
-          data-cursor-hover
         >
           {open ? <X size={18} /> : <Menu size={18} />}
         </button>

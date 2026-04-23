@@ -6,7 +6,6 @@ import Footer from '@/components/Footer';
 import SmoothScroll from '@/components/SmoothScroll';
 import PageTransition from '@/components/PageTransition';
 import ScrollProgress from '@/components/ScrollProgress';
-import Cursor from '@/components/Cursor';
 import BackToTop from '@/components/BackToTop';
 import Loader from '@/components/Loader';
 
@@ -39,7 +38,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Loader />
         <SmoothScroll />
         <ScrollProgress />
-        <Cursor />
         <Header />
         <PageTransition>
           <main className="relative z-10">{children}</main>
