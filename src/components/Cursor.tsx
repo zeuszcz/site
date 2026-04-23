@@ -58,13 +58,13 @@ export default function Cursor() {
           <motion.div
             key={label}
             style={{ x: sx, y: sy }}
-            initial={{ opacity: 0, scale: 0.85, x: sx, y: sy }}
+            initial={{ opacity: 0, scale: 0.85 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.85 }}
             transition={{ duration: 0.22 }}
             className="fixed top-0 left-0 pointer-events-none z-[202] font-mono text-[10px] tracking-[0.2em] uppercase text-bg bg-fg px-3 py-1.5 rounded-full whitespace-nowrap"
           >
-            <span className="block" style={{ transform: 'translate(18px, 12px)' }}>{label}</span>
+            <span className="block translate-x-[18px] translate-y-[12px]">{label}</span>
           </motion.div>
         )}
       </AnimatePresence>
