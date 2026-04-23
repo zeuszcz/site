@@ -29,29 +29,29 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
     <>
       <section className="pt-32">
         <div className="container-x">
-          <Link href="/works" className="inline-flex items-center gap-2 text-sm text-muted hover:text-accent transition-colors">
-            <ArrowLeft size={16} /> Все работы
+          <Link href="/works" className="inline-flex items-center gap-2 text-sm text-muted hover:text-fg transition-colors">
+            <ArrowLeft size={16} strokeWidth={1.5} /> Все работы
           </Link>
         </div>
       </section>
 
-      <section className="pt-8 pb-16">
+      <section className="pt-10 pb-16">
         <div className="container-x">
           <Reveal><span className="eyebrow">{work.category || 'Проект'}</span></Reveal>
           <Reveal delay={0.1}>
-            <h1 className="h-display mt-6 text-5xl md:text-7xl lg:text-8xl max-w-5xl tracking-tighter">{work.title}</h1>
+            <h1 className="h-display mt-8 text-5xl md:text-7xl lg:text-8xl max-w-5xl tracking-[-0.03em]">{work.title}</h1>
           </Reveal>
           {work.excerpt && (
             <Reveal delay={0.2}>
-              <p className="mt-8 max-w-2xl text-lg text-fg/70">{work.excerpt}</p>
+              <p className="mt-10 max-w-2xl text-lg text-muted leading-relaxed">{work.excerpt}</p>
             </Reveal>
           )}
 
           {work.tags.length > 0 && (
             <Reveal delay={0.3}>
-              <div className="mt-8 flex flex-wrap gap-2">
+              <div className="mt-10 flex flex-wrap gap-1.5">
                 {work.tags.map((t) => (
-                  <span key={t} className="text-xs font-mono px-3 py-1 rounded-full border border-line text-muted">
+                  <span key={t} className="text-[11px] font-mono tracking-wide px-3 py-1 rounded-full border border-line text-muted bg-surface">
                     #{t}
                   </span>
                 ))}
@@ -62,7 +62,7 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
       </section>
 
       {work.coverUrl && (
-        <section className="pb-16">
+        <section className="pb-20">
           <div className="container-x">
             <Reveal>
               <div className="relative aspect-video overflow-hidden rounded-3xl border border-line bg-surface2">
@@ -76,7 +76,7 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
       <section className="pb-24 md:pb-32">
         <div className="container-x max-w-3xl">
           <Reveal>
-            <div className="prose prose-invert max-w-none whitespace-pre-wrap text-lg leading-relaxed text-fg/80">
+            <div className="whitespace-pre-wrap text-lg leading-relaxed text-fg">
               {work.description}
             </div>
           </Reveal>
@@ -106,18 +106,18 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
                 <Link href="/works" className="btn-ghost">Все</Link>
               </div>
             </Reveal>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {related.map((r, i) => (
                 <Reveal key={r.id} delay={i * 0.08}>
-                  <Link href={`/works/${r.slug}`} className="card block overflow-hidden group">
+                  <Link href={`/works/${r.slug}`} className="block group">
                     {r.coverUrl && (
-                      <div className="aspect-[4/5] overflow-hidden bg-surface2">
-                        <img src={r.coverUrl} alt={r.title} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                      <div className="aspect-[4/5] overflow-hidden bg-surface2 rounded-2xl border border-line">
+                        <img src={r.coverUrl} alt={r.title} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.06]" />
                       </div>
                     )}
-                    <div className="p-6">
-                      <span className="text-xs uppercase tracking-widest text-muted">{r.category || '—'}</span>
-                      <h3 className="h-display text-xl mt-2">{r.title}</h3>
+                    <div className="pt-5">
+                      <span className="text-[10px] font-mono uppercase tracking-[0.3em] text-muted">{r.category || '—'}</span>
+                      <h3 className="h-display text-xl mt-2 group-hover:italic transition-all">{r.title}</h3>
                     </div>
                   </Link>
                 </Reveal>

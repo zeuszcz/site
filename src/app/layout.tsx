@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ru" className={`${inter.variable} ${manrope.variable} ${mono.variable}`}>
-      <body className="noise font-sans bg-bg text-fg">
+      <body className="paper font-sans bg-bg text-fg">
         <SmoothScroll />
         <Header />
         <PageTransition>

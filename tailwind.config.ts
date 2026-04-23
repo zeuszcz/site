@@ -5,14 +5,14 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bg: '#0a0a0a',
-        surface: '#121212',
-        surface2: '#1a1a1a',
-        line: '#262626',
-        fg: '#f5f5f5',
-        muted: '#8a8a8a',
-        accent: '#e6ff56',
-        accent2: '#ff4d4d',
+        bg: '#FAF8F5',        // linen
+        surface: '#FFFFFF',    // cards
+        surface2: '#F5F2EC',   // subtle off-cream
+        line: '#E8E4DE',       // hairline
+        fg: '#141414',         // ink
+        muted: '#5C5C5C',      // secondary
+        accent: '#2B2B2B',     // graphite
+        accent2: '#8B2F2F',    // warm warning (used sparingly)
       },
       fontFamily: {
         sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
@@ -21,8 +21,7 @@ const config: Config = {
       },
       animation: {
         'marquee': 'marquee 35s linear infinite',
-        'float': 'float 6s ease-in-out infinite',
-        'glow': 'glow 3s ease-in-out infinite',
+        'float': 'float 8s ease-in-out infinite',
       },
       keyframes: {
         marquee: {
@@ -31,11 +30,7 @@ const config: Config = {
         },
         float: {
           '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-12px)' },
-        },
-        glow: {
-          '0%, 100%': { opacity: '0.6' },
-          '50%': { opacity: '1' },
+          '50%': { transform: 'translateY(-10px)' },
         },
       },
     },

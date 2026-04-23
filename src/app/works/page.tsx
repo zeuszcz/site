@@ -14,12 +14,12 @@ export default async function WorksPage() {
         <div className="container-x">
           <Reveal><span className="eyebrow">Портфолио</span></Reveal>
           <Reveal delay={0.1}>
-            <h1 className="h-display mt-6 text-6xl md:text-8xl tracking-tighter">
-              Наши <span className="text-accent italic">работы</span>
+            <h1 className="h-display mt-8 text-6xl md:text-8xl tracking-[-0.03em]">
+              Наши <span className="italic text-muted">работы</span>
             </h1>
           </Reveal>
           <Reveal delay={0.2}>
-            <p className="mt-8 max-w-2xl text-lg text-fg/70">
+            <p className="mt-10 max-w-2xl text-lg text-muted leading-relaxed">
               Проекты, которые мы создавали — от ранних MVP до масштабных продуктовых релизов.
             </p>
           </Reveal>

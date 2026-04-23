@@ -47,13 +47,13 @@ export default function WorkForm({ initial }: Props) {
       <Field label="Короткое описание" name="excerpt" defaultValue={initial?.excerpt} />
 
       <div>
-        <label className="text-xs uppercase tracking-widest text-muted mb-2 block">Полное описание</label>
+        <label className="text-[10px] uppercase tracking-[0.22em] text-muted mb-2 block">Полное описание</label>
         <textarea name="description" rows={8} required defaultValue={initial?.description}
-                  className="w-full bg-surface border border-line rounded-xl p-4 focus:border-accent outline-none transition-colors" />
+                  className="w-full bg-surface border border-line rounded-xl p-4 focus:border-fg outline-none transition-colors text-fg" />
       </div>
 
       <div>
-        <label className="text-xs uppercase tracking-widest text-muted mb-2 block">Обложка</label>
+        <label className="text-[10px] uppercase tracking-[0.22em] text-muted mb-2 block">Обложка</label>
         <FileDrop
           accept="image/*"
           multiple={false}
@@ -71,7 +71,7 @@ export default function WorkForm({ initial }: Props) {
       </div>
 
       <div>
-        <label className="text-xs uppercase tracking-widest text-muted mb-2 block">Дополнительные изображения</label>
+        <label className="text-[10px] uppercase tracking-[0.22em] text-muted mb-2 block">Дополнительные изображения</label>
         <FileDrop
           accept="image/*"
           multiple
@@ -85,7 +85,7 @@ export default function WorkForm({ initial }: Props) {
                 <button
                   type="button"
                   onClick={() => setImages(images.filter((_, ix) => ix !== i))}
-                  className="absolute top-1 right-1 h-6 w-6 rounded-full bg-bg/80 flex items-center justify-center text-fg hover:text-accent2"
+                  className="absolute top-1 right-1 h-6 w-6 rounded-full bg-bg/90 flex items-center justify-center text-fg hover:text-accent2"
                 >
                   <X size={12} />
                 </button>
@@ -96,7 +96,7 @@ export default function WorkForm({ initial }: Props) {
       </div>
 
       <label className="flex items-center gap-3 cursor-pointer">
-        <input type="checkbox" name="published" value="1" defaultChecked={initial?.published ?? true} className="h-5 w-5 accent-[#e6ff56]" />
+        <input type="checkbox" name="published" value="1" defaultChecked={initial?.published ?? true} className="h-5 w-5 accent-[#141414]" />
         <span>Опубликовать</span>
       </label>
 
@@ -117,9 +117,9 @@ function Field({ label, name, required, defaultValue, hint }: {
 }) {
   return (
     <div>
-      <label className="text-xs uppercase tracking-widest text-muted mb-2 block">{label}{required && ' *'}</label>
+      <label className="text-[10px] uppercase tracking-[0.22em] text-muted mb-2 block">{label}{required && ' *'}</label>
       <input name={name} required={required} defaultValue={defaultValue}
-             className="w-full bg-surface border border-line rounded-xl px-4 py-3 focus:border-accent outline-none transition-colors" />
+             className="w-full bg-surface border border-line rounded-xl px-4 py-3 focus:border-fg outline-none transition-colors text-fg" />
       {hint && <p className="mt-1 text-xs text-muted">{hint}</p>}
     </div>
   );
@@ -137,16 +137,16 @@ function FileDrop({ accept, multiple, onFiles }: { accept: string; multiple: boo
         const files = Array.from(e.dataTransfer.files);
         if (files.length) onFiles(files);
       }}
-      className={`block rounded-2xl border-2 border-dashed p-8 text-center cursor-pointer transition-colors ${
-        over ? 'border-accent bg-accent/5' : 'border-line hover:border-fg/40 bg-surface'
+      className={`block rounded-2xl border border-dashed p-10 text-center cursor-pointer transition-colors ${
+        over ? 'border-fg bg-surface2' : 'border-line hover:border-fg/50 bg-surface'
       }`}
     >
       <input type="file" accept={accept} multiple={multiple}
              onChange={(e) => e.target.files && onFiles(Array.from(e.target.files))}
              className="hidden" />
-      <UploadCloud className="mx-auto mb-2 text-muted" size={24} />
-      <div className="text-sm text-fg/70">Перетащите файл{multiple ? 'ы' : ''} или нажмите, чтобы выбрать</div>
-      <div className="text-xs text-muted mt-1">jpg, png, webp, до 20 МБ каждый</div>
+      <UploadCloud className="mx-auto mb-3 text-muted" size={22} strokeWidth={1.5} />
+      <div className="text-sm text-fg">Перетащите файл{multiple ? 'ы' : ''} или нажмите, чтобы выбрать</div>
+      <div className="text-xs text-muted mt-1">jpg, png, webp, до 25 МБ каждый</div>
     </label>
   );
 }

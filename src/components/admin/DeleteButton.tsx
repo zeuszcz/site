@@ -17,8 +17,13 @@ export default function DeleteButton({ id }: { id: string }) {
   }
 
   return (
-    <button onClick={onDelete} disabled={busy} className="btn-ghost text-xs hover:text-accent2 hover:border-accent2 disabled:opacity-40">
-      <Trash2 size={14} />
+    <button
+      onClick={onDelete}
+      disabled={busy}
+      className="btn-ghost text-xs px-3 py-2 hover:text-accent2 hover:border-accent2 disabled:opacity-40"
+      aria-label="Удалить"
+    >
+      <Trash2 size={14} strokeWidth={1.5} />
     </button>
   );
 }
