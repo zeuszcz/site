@@ -18,7 +18,7 @@ export async function GET(
   { params }: { params: Promise<{ workId: string; filename: string }> }
 ) {
   const { workId, filename } = await params;
-  if (!/^[a-f0-9-]+$/i.test(workId)) return new NextResponse('bad workId', { status: 400 });
+  if (!/^[a-zA-Z0-9_-]+$/.test(workId)) return new NextResponse('bad workId', { status: 400 });
   if (!/^[a-zA-Z0-9._-]+$/.test(filename)) return new NextResponse('bad filename', { status: 400 });
 
   const { works } = getStoragePaths();
