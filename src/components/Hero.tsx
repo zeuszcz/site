@@ -1,14 +1,32 @@
 'use client';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
-import Link from 'next/link';
+import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'framer-motion';
+import { useRef, useEffect } from 'react';
 import { ArrowDown } from 'lucide-react';
+import SplitText from '@/components/SplitText';
+import MagneticButton from '@/components/MagneticButton';
 
 export default function Hero() {
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] });
   const y = useTransform(scrollYProgress, [0, 1], [0, 180]);
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+
+  const mx = useMotionValue(0);
+  const my = useMotionValue(0);
+  const smx = useSpring(mx, { stiffness: 80, damping: 20, mass: 0.5 });
+  const smy = useSpring(my, { stiffness: 80, damping: 20, mass: 0.5 });
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const onMove = (e: MouseEvent) => {
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+      mx.set((e.clientX / w - 0.5) * 24);
+      my.set((e.clientY / h - 0.5) * 16);
+    };
+    window.addEventListener('mousemove', onMove, { passive: true });
+    return () => window.removeEventListener('mousemove', onMove);
+  }, [mx, my]);
 
   return (
     <section ref={ref} className="relative min-h-[92vh] flex items-center overflow-hidden pt-28">
@@ -30,45 +48,22 @@ export default function Hero() {
           Студия полного цикла
         </motion.div>
 
-        <h1 className="h-display text-[13vw] md:text-[9vw] lg:text-[7.5rem] leading-[0.92] tracking-[-0.035em] max-w-6xl text-fg">
-          {['Создаём', 'продукты,'].map((word, i) => (
-            <motion.span
-              key={i}
-              initial={{ opacity: 0, y: 60 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 0.1 + i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="inline-block mr-5"
-            >
-              {word}
-            </motion.span>
-          ))}
+        <motion.h1
+          style={{ x: smx, y: smy }}
+          className="h-display text-[13vw] md:text-[9vw] lg:text-[7.5rem] leading-[0.92] tracking-[-0.035em] max-w-6xl text-fg"
+        >
+          <SplitText text="Создаём продукты," speed={0.022} />
           <br className="hidden md:inline" />
-          {['которые'].map((word, i) => (
-            <motion.span
-              key={`r${i}`}
-              initial={{ opacity: 0, y: 60 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="inline-block mr-5"
-            >
-              {word}
-            </motion.span>
-          ))}
-          <motion.span
-            initial={{ opacity: 0, y: 60 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="inline-block italic font-normal text-muted"
-          >
-            звучат.
-          </motion.span>
-        </h1>
+          <SplitText text="которые" speed={0.022} delay={0.2} />
+          <span className="mr-[0.25em]" />
+          <SplitText text="звучат." speed={0.022} delay={0.38} italic className="text-muted" />
+        </motion.h1>
 
         <div className="mt-16 grid md:grid-cols-[1fr_auto] gap-10 items-end">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            transition={{ duration: 0.8, delay: 0.9 }}
             className="max-w-xl text-lg text-muted leading-relaxed"
           >
             Дизайн, разработка и брендинг — от первой идеи до работающего продукта. Помогаем бизнесу становиться узнаваемым.
@@ -77,18 +72,18 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.75 }}
+            transition={{ duration: 0.8, delay: 1 }}
             className="flex flex-wrap gap-3"
           >
-            <Link href="/contact" className="btn-primary">Обсудить проект</Link>
-            <Link href="/works" className="btn-ghost">Посмотреть работы</Link>
+            <MagneticButton href="/contact" className="btn-primary">Обсудить проект</MagneticButton>
+            <MagneticButton href="/works" className="btn-ghost">Посмотреть работы</MagneticButton>
           </motion.div>
         </div>
 
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.2 }}
+          transition={{ duration: 1, delay: 1.4 }}
           className="absolute bottom-10 left-0 right-0 flex justify-center"
         >
           <motion.div

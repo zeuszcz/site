@@ -5,6 +5,9 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import SmoothScroll from '@/components/SmoothScroll';
 import PageTransition from '@/components/PageTransition';
+import ScrollProgress from '@/components/ScrollProgress';
+import Cursor from '@/components/Cursor';
+import BackToTop from '@/components/BackToTop';
 
 const inter = Inter({ subsets: ['latin', 'cyrillic'], variable: '--font-sans', display: 'swap' });
 const manrope = Manrope({ subsets: ['latin', 'cyrillic'], variable: '--font-display', display: 'swap' });
@@ -33,11 +36,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="ru" className={`${inter.variable} ${manrope.variable} ${mono.variable}`}>
       <body className="paper font-sans bg-bg text-fg">
         <SmoothScroll />
+        <ScrollProgress />
+        <Cursor />
         <Header />
         <PageTransition>
           <main className="relative z-10">{children}</main>
         </PageTransition>
         <Footer />
+        <BackToTop />
       </body>
     </html>
   );

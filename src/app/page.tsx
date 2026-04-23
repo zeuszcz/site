@@ -2,6 +2,9 @@ import Hero from '@/components/Hero';
 import ServicesGrid from '@/components/ServicesGrid';
 import WorksGrid from '@/components/WorksGrid';
 import Reveal from '@/components/Reveal';
+import Marquee from '@/components/Marquee';
+import Counter from '@/components/Counter';
+import MagneticButton from '@/components/MagneticButton';
 import Link from 'next/link';
 import { listWorks } from '@/lib/storage';
 
@@ -9,12 +12,17 @@ export const dynamic = 'force-dynamic';
 
 export default async function HomePage() {
   const works = (await listWorks({ publishedOnly: true })).slice(0, 6);
+  const brands = ['Ocea Cosmetics', 'FinEx', 'Nordhaus', 'Tableau', 'Spark', 'Volna', 'Meridian', 'Paperhouse'];
 
   return (
     <>
       <Hero />
 
-      <section id="services" className="relative py-28 md:py-40 border-t border-line">
+      <section className="relative py-10 md:py-14 border-y border-line bg-surface2">
+        <Marquee items={brands} speed={45} />
+      </section>
+
+      <section id="services" className="relative py-28 md:py-40 border-b border-line">
         <div className="container-x">
           <Reveal className="mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
             <div>
@@ -23,13 +31,13 @@ export default async function HomePage() {
                 Полный цикл <span className="italic text-muted">— под ключ</span>
               </h2>
             </div>
-            <Link href="/services" className="btn-ghost shrink-0">Все услуги</Link>
+            <MagneticButton href="/services" className="btn-ghost shrink-0">Все услуги</MagneticButton>
           </Reveal>
           <ServicesGrid />
         </div>
       </section>
 
-      <section className="relative py-28 md:py-40 border-t border-line">
+      <section className="relative py-28 md:py-40 border-b border-line">
         <div className="container-x">
           <Reveal className="mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
             <div>
@@ -38,28 +46,34 @@ export default async function HomePage() {
                 Избранное <span className="italic text-muted">из портфолио</span>
               </h2>
             </div>
-            <Link href="/works" className="btn-ghost shrink-0">Все работы</Link>
+            <MagneticButton href="/works" className="btn-ghost shrink-0">Все работы</MagneticButton>
           </Reveal>
           <WorksGrid works={works} />
         </div>
       </section>
 
-      <section className="relative py-28 border-t border-line">
+      <section className="relative py-28">
         <div className="container-x">
           <Reveal className="mb-12">
             <span className="eyebrow">03 — Цифры</span>
           </Reveal>
           <div className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-line border-y border-line">
-            {[
-              { k: '50+', v: 'реализованных проектов' },
-              { k: '6', v: 'лет на рынке' },
-              { k: '24/7', v: 'поддержка клиентов' },
-            ].map((s, i) => (
-              <Reveal key={i} delay={i * 0.1} className="p-10 md:p-14">
-                <div className="h-display text-7xl md:text-8xl text-fg">{s.k}</div>
-                <p className="mt-6 text-muted">{s.v}</p>
-              </Reveal>
-            ))}
+            <Reveal className="p-10 md:p-14">
+              <div className="h-display text-7xl md:text-8xl text-fg tabular-nums">
+                <Counter to={50} suffix="+" />
+              </div>
+              <p className="mt-6 text-muted">реализованных проектов</p>
+            </Reveal>
+            <Reveal delay={0.1} className="p-10 md:p-14">
+              <div className="h-display text-7xl md:text-8xl text-fg tabular-nums">
+                <Counter to={6} />
+              </div>
+              <p className="mt-6 text-muted">лет на рынке</p>
+            </Reveal>
+            <Reveal delay={0.2} className="p-10 md:p-14">
+              <div className="h-display text-7xl md:text-8xl text-fg">24<span className="text-muted">/</span>7</div>
+              <p className="mt-6 text-muted">поддержка клиентов</p>
+            </Reveal>
           </div>
         </div>
       </section>

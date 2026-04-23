@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { usePathname } from 'next/navigation';
+import MagneticButton from '@/components/MagneticButton';
 
 const nav = [
   { href: '/services', label: 'Услуги' },
@@ -67,14 +68,17 @@ export default function Header() {
           })}
         </nav>
 
-        <Link href="/contact" className="hidden md:inline-flex btn-primary text-xs">
-          Обсудить проект
-        </Link>
+        <div className="hidden md:inline-flex">
+          <MagneticButton href="/contact" className="btn-primary text-xs">
+            Обсудить проект
+          </MagneticButton>
+        </div>
 
         <button
           onClick={() => setOpen(!open)}
           className="md:hidden p-2 rounded-full border border-line"
           aria-label="Меню"
+          data-cursor-hover
         >
           {open ? <X size={18} /> : <Menu size={18} />}
         </button>

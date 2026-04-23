@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import MagneticButton from '@/components/MagneticButton';
 
 export default function Footer() {
   return (
@@ -9,7 +10,7 @@ export default function Footer() {
             Готовы обсудить <br/>
             <span className="italic text-muted">ваш проект?</span>
           </h3>
-          <Link href="/contact" className="btn-primary">Написать нам</Link>
+          <MagneticButton href="/contact" className="btn-primary">Написать нам</MagneticButton>
         </div>
 
         <div className="md:col-span-3">

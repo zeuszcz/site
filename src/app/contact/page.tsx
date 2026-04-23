@@ -1,5 +1,6 @@
 import Reveal from '@/components/Reveal';
 import ContactForm from '@/components/ContactForm';
+import SplitText from '@/components/SplitText';
 import { Mail, MessageCircle } from 'lucide-react';
 
 export const metadata = { title: 'Контакты' };
@@ -10,11 +11,11 @@ export default function ContactPage() {
       <section className="pt-40 pb-16">
         <div className="container-x">
           <Reveal><span className="eyebrow">Контакты</span></Reveal>
-          <Reveal delay={0.1}>
-            <h1 className="h-display mt-8 text-6xl md:text-8xl tracking-[-0.03em] max-w-5xl">
-              Давайте <span className="italic text-muted">поговорим</span>
-            </h1>
-          </Reveal>
+          <h1 className="h-display mt-8 text-6xl md:text-8xl tracking-[-0.03em] max-w-5xl">
+            <SplitText text="Давайте" />
+            <span className="mr-[0.25em]" />
+            <SplitText text="поговорим" delay={0.15} italic className="text-muted" />
+          </h1>
           <Reveal delay={0.2}>
             <p className="mt-10 max-w-2xl text-lg text-muted leading-relaxed">
               Расскажите о задаче — мы отвечаем в течение 24 часов.
