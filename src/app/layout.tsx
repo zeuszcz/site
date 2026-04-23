@@ -8,6 +8,7 @@ import PageTransition from '@/components/PageTransition';
 import ScrollProgress from '@/components/ScrollProgress';
 import BackToTop from '@/components/BackToTop';
 import Loader from '@/components/Loader';
+import CommandPalette from '@/components/CommandPalette';
 
 const inter = Inter({ subsets: ['latin', 'cyrillic'], variable: '--font-sans', display: 'swap' });
 const manrope = Manrope({ subsets: ['latin', 'cyrillic'], variable: '--font-display', display: 'swap' });
@@ -38,6 +39,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Loader />
         <SmoothScroll />
         <ScrollProgress />
+        <CommandPalette />
         <Header />
         <PageTransition>
           <main className="relative z-10">{children}</main>

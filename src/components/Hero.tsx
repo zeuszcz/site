@@ -49,7 +49,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="flex flex-wrap gap-3"
           >
-            <MagneticButton href="/contact" className="btn-primary">Обсудить проект</MagneticButton>
+            <MagneticButton href="/start" className="btn-primary">Начать проект</MagneticButton>
             <MagneticButton href="/works" className="btn-ghost">Посмотреть работы</MagneticButton>
           </motion.div>
         </div>

@@ -55,11 +55,14 @@ export default function AboutPage() {
 
       <section className="pb-28 pt-28 border-t border-line">
         <div className="container-x">
-          <Reveal className="mb-16 md:mb-20 max-w-3xl">
-            <span className="eyebrow">Команда</span>
-            <h2 className="h-display mt-6 text-[clamp(2.5rem,5.5vw,5rem)] leading-[1.05] tracking-[-0.025em]">
-              14 человек <span className="italic text-muted">в студии</span>
-            </h2>
+          <Reveal className="mb-16 md:mb-20 flex flex-col md:flex-row md:items-end md:justify-between gap-6 max-w-6xl">
+            <div>
+              <span className="eyebrow">Команда</span>
+              <h2 className="h-display mt-6 text-[clamp(2.5rem,5.5vw,5rem)] leading-[1.05] tracking-[-0.025em]">
+                14 человек <span className="italic text-muted">в студии</span>
+              </h2>
+            </div>
+            <MagneticButton href="/careers" className="btn-ghost shrink-0">Открытые вакансии</MagneticButton>
           </Reveal>
           <Team />
         </div>

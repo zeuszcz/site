@@ -69,9 +69,17 @@ export default function Header() {
           })}
         </nav>
 
-        <div className="hidden md:inline-flex">
-          <MagneticButton href="/contact" className="btn-primary text-[12px] py-3 px-6">
-            Обсудить проект
+        <div className="hidden md:flex items-center gap-3">
+          <button
+            onClick={() => { window.dispatchEvent(new Event('cmd-palette:toggle')); }}
+            className="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-full border border-line text-muted hover:text-fg hover:border-fg transition-colors text-[11px] font-mono"
+            aria-label="Поиск"
+          >
+            <span>Поиск</span>
+            <kbd className="border border-line bg-surface/80 rounded px-1.5 py-0.5 text-[10px]">⌘K</kbd>
+          </button>
+          <MagneticButton href="/start" className="btn-primary text-[12px] py-3 px-6">
+            Начать проект
           </MagneticButton>
         </div>
 

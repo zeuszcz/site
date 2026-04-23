@@ -115,13 +115,16 @@ export default async function HomePage() {
           </Reveal>
           <Reveal delay={0.1}>
             <p className="mt-8 text-lg text-muted max-w-lg mx-auto">
-              Короткий созвон на 30 минут — и у вас будет понимание скоупа, сроков и бюджета.
+              Заполните короткий бриф или забронируйте 30-минутный созвон.
             </p>
           </Reveal>
           <Reveal delay={0.2}>
-            <div className="mt-12">
-              <MagneticButton href="/contact" className="btn-primary">
-                Написать нам
+            <div className="mt-12 flex flex-wrap gap-3 justify-center">
+              <MagneticButton href="/start" className="btn-primary">
+                Заполнить бриф
+              </MagneticButton>
+              <MagneticButton href="/book" className="btn-ghost">
+                Забронировать созвон
               </MagneticButton>
             </div>
           </Reveal>
