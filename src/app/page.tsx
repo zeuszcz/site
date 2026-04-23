@@ -6,6 +6,10 @@ import Marquee from '@/components/Marquee';
 import Counter from '@/components/Counter';
 import MagneticButton from '@/components/MagneticButton';
 import Process from '@/components/Process';
+import Testimonials from '@/components/Testimonials';
+import LogoWall from '@/components/LogoWall';
+import InsightsPreview from '@/components/InsightsPreview';
+import LiveStatus from '@/components/LiveStatus';
 import { listWorks } from '@/lib/storage';
 
 export const dynamic = 'force-dynamic';
@@ -26,6 +30,15 @@ export default async function HomePage() {
           direction="right"
           size="sm"
         />
+      </section>
+
+      <section className="relative py-20 md:py-28 border-b border-line">
+        <div className="container-x">
+          <Reveal className="mb-12">
+            <span className="eyebrow">Сейчас</span>
+          </Reveal>
+          <LiveStatus />
+        </div>
       </section>
 
       <section id="services" className="relative py-28 md:py-40 border-b border-line">
@@ -73,10 +86,47 @@ export default async function HomePage() {
         </div>
       </section>
 
+      <section className="relative py-28 md:py-40 border-b border-line bg-surface2">
+        <div className="container-x">
+          <Reveal className="mb-16">
+            <span className="eyebrow">04 — Отзывы</span>
+            <h2 className="h-display mt-5 text-5xl md:text-7xl max-w-3xl">
+              Что говорят <span className="italic text-muted">клиенты</span>
+            </h2>
+          </Reveal>
+          <Testimonials />
+        </div>
+      </section>
+
+      <section className="relative py-24 md:py-28 border-b border-line">
+        <div className="container-x">
+          <Reveal className="mb-10 flex items-end justify-between">
+            <span className="eyebrow">05 — Нам доверяют</span>
+            <span className="font-mono text-xs text-muted hidden md:inline">50+ проектов / 2020 →</span>
+          </Reveal>
+          <LogoWall />
+        </div>
+      </section>
+
+      <section className="relative py-28 md:py-40 border-b border-line">
+        <div className="container-x">
+          <Reveal className="mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+            <div>
+              <span className="eyebrow">06 — Инсайты</span>
+              <h2 className="h-display mt-5 text-5xl md:text-7xl max-w-3xl">
+                Мысли <span className="italic text-muted">в процессе</span>
+              </h2>
+            </div>
+            <MagneticButton href="/insights" className="btn-ghost shrink-0">Все материалы</MagneticButton>
+          </Reveal>
+          <InsightsPreview limit={4} />
+        </div>
+      </section>
+
       <section className="relative py-28">
         <div className="container-x">
           <Reveal className="mb-12">
-            <span className="eyebrow">04 — Цифры</span>
+            <span className="eyebrow">07 — Цифры</span>
           </Reveal>
           <div className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-line border-y border-line">
             <Reveal className="p-10 md:p-14">

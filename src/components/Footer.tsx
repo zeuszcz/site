@@ -18,6 +18,7 @@ export default function Footer() {
           <ul className="space-y-3 text-sm">
             <li><Link href="/services" className="text-muted hover:text-fg hover:underline underline-offset-4 transition-colors">Услуги</Link></li>
             <li><Link href="/works" className="text-muted hover:text-fg hover:underline underline-offset-4 transition-colors">Работы</Link></li>
+            <li><Link href="/insights" className="text-muted hover:text-fg hover:underline underline-offset-4 transition-colors">Инсайты</Link></li>
             <li><Link href="/about" className="text-muted hover:text-fg hover:underline underline-offset-4 transition-colors">О нас</Link></li>
             <li><Link href="/contact" className="text-muted hover:text-fg hover:underline underline-offset-4 transition-colors">Контакты</Link></li>
           </ul>

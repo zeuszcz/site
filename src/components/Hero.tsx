@@ -4,6 +4,7 @@ import { useRef, useEffect } from 'react';
 import { ArrowDown } from 'lucide-react';
 import SplitText from '@/components/SplitText';
 import MagneticButton from '@/components/MagneticButton';
+import ScrambleText from '@/components/ScrambleText';
 
 export default function Hero() {
   const ref = useRef<HTMLElement>(null);
@@ -78,14 +79,28 @@ export default function Hero() {
         </motion.h1>
 
         <div className="mt-16 grid md:grid-cols-[1fr_auto] gap-10 items-end">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.9 }}
-            className="max-w-xl text-lg text-muted leading-relaxed"
-          >
-            Дизайн, разработка и брендинг — от первой идеи до работающего продукта. Помогаем бизнесу становиться узнаваемым.
-          </motion.p>
+          <div>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.9 }}
+              className="max-w-xl text-lg text-muted leading-relaxed"
+            >
+              Дизайн, разработка и брендинг — от первой идеи до работающего продукта. Помогаем бизнесу становиться узнаваемым.
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 1.15 }}
+              className="mt-6 flex items-center gap-3 text-[11px] uppercase tracking-[0.25em] text-muted"
+            >
+              <span className="font-mono">Специализация:</span>
+              <ScrambleText
+                className="text-fg text-[11px] tracking-[0.25em]"
+                words={['БРЕНДИНГ', 'САЙТЫ', 'ПРИЛОЖЕНИЯ', 'ДИЗАЙН-СИСТЕМЫ', 'ПРОДУКТЫ']}
+              />
+            </motion.div>
+          </div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}

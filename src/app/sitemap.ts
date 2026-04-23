@@ -1,10 +1,11 @@
 import type { MetadataRoute } from 'next';
 import { listWorks } from '@/lib/storage';
+import { insights } from '@/lib/content';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = 'https://site.innertalk.ru';
   const works = await listWorks({ publishedOnly: true });
-  const staticPages = ['', '/services', '/works', '/about', '/contact'].map((p) => ({
+  const staticPages = ['', '/services', '/works', '/insights', '/about', '/contact'].map((p) => ({
     url: `${base}${p}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
@@ -16,5 +17,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     changeFrequency: 'monthly' as const,
     priority: 0.6,
   }));
-  return [...staticPages, ...workPages];
+  const insightPages = insights.map((i) => ({
+    url: `${base}/insights/${i.slug}`,
+    lastModified: new Date(i.date),
+    changeFrequency: 'monthly' as const,
+    priority: 0.5,
+  }));
+  return [...staticPages, ...workPages, ...insightPages];
 }

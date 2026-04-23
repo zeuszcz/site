@@ -2,6 +2,8 @@ import Reveal from '@/components/Reveal';
 import FAQ from '@/components/FAQ';
 import MagneticButton from '@/components/MagneticButton';
 import SplitText from '@/components/SplitText';
+import Team from '@/components/Team';
+import Awards from '@/components/Awards';
 
 export const metadata = { title: 'О нас' };
 
@@ -10,6 +12,13 @@ const values = [
   { title: 'Дизайн — инструмент', body: 'Красиво не ради красоты. Каждый элемент работает на цель продукта.' },
   { title: 'Открытость процесса', body: 'Клиент видит ход работы на каждом этапе — без «чёрных ящиков».' },
   { title: 'Результат важнее процесса', body: 'Цель — запущенный продукт и рост бизнеса, а не тонна артефактов.' },
+];
+
+const milestones = [
+  { year: '2020', title: 'Основана студия',                  body: 'Артём Стенвик собрал первую команду из 3 человек. Первый проект — айдентика локального кафе.' },
+  { year: '2022', title: 'Первый международный клиент',      body: 'Выиграли питч на проект из Берлина. Расширились до 8 человек.' },
+  { year: '2024', title: 'Вошли в топ-20 digital-студий РФ', body: 'Рейтинг Ruward. Запустили направление дизайн-систем для enterprise.' },
+  { year: '2026', title: 'Команда 14 человек · 50+ проектов', body: 'Работаем с клиентами из 8 стран. Открыт найм на Lead Designer.' },
 ];
 
 export default function AboutPage() {
@@ -45,7 +54,61 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="pb-24 md:pb-32 border-t border-line pt-24">
+      <section className="pb-28 border-t border-line pt-24">
+        <div className="container-x">
+          <Reveal className="mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+            <div>
+              <span className="eyebrow">Команда</span>
+              <h2 className="h-display mt-6 text-5xl md:text-6xl">
+                14 человек <span className="italic text-muted">в студии</span>
+              </h2>
+            </div>
+            <p className="text-muted max-w-sm">Дизайнеры, разработчики, продакты и стратеги. Наведи на карточку — узнаешь больше.</p>
+          </Reveal>
+          <Team />
+        </div>
+      </section>
+
+      <section className="pb-28 border-t border-line pt-24 bg-surface2">
+        <div className="container-x">
+          <Reveal className="mb-12 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+            <div>
+              <span className="eyebrow">Путь студии</span>
+              <h2 className="h-display mt-6 text-5xl md:text-6xl">
+                От 3 до 14 <span className="italic text-muted">за 6 лет</span>
+              </h2>
+            </div>
+          </Reveal>
+          <div className="grid md:grid-cols-4 gap-px bg-line border border-line rounded-2xl overflow-hidden">
+            {milestones.map((m, i) => (
+              <Reveal key={m.year} delay={i * 0.08}>
+                <div className="bg-surface p-8 md:p-10 h-full">
+                  <div className="font-mono text-sm text-fg mb-4">{m.year}</div>
+                  <h3 className="h-display text-xl md:text-2xl mb-3">{m.title}</h3>
+                  <p className="text-sm text-muted leading-relaxed">{m.body}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="pb-28 border-t border-line pt-24">
+        <div className="container-x">
+          <Reveal className="mb-12 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+            <div>
+              <span className="eyebrow">Награды</span>
+              <h2 className="h-display mt-6 text-5xl md:text-6xl">
+                Нас заметили <span className="italic text-muted">здесь</span>
+              </h2>
+            </div>
+            <p className="text-muted max-w-sm">Семь наград за последние 4 года в digital и brand номинациях.</p>
+          </Reveal>
+          <Awards />
+        </div>
+      </section>
+
+      <section className="pb-24 md:pb-32 border-t border-line pt-24 bg-surface2">
         <div className="container-x">
           <Reveal className="mb-12 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
             <div>

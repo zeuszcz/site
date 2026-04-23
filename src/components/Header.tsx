@@ -10,6 +10,7 @@ import LiveTime from '@/components/LiveTime';
 const nav = [
   { href: '/services', label: 'Услуги' },
   { href: '/works', label: 'Работы' },
+  { href: '/insights', label: 'Инсайты' },
   { href: '/about', label: 'О нас' },
   { href: '/contact', label: 'Контакты' },
 ];

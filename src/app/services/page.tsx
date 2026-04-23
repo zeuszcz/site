@@ -2,6 +2,7 @@ import ServicesGrid from '@/components/ServicesGrid';
 import Reveal from '@/components/Reveal';
 import SplitText from '@/components/SplitText';
 import MagneticButton from '@/components/MagneticButton';
+import PriceEstimator from '@/components/PriceEstimator';
 
 export const metadata = { title: 'Услуги' };
 
@@ -16,7 +17,7 @@ export default function ServicesPage() {
             <span className="mr-[0.25em]" />
             <SplitText text="делаем" delay={0.15} italic className="text-muted" />
           </h1>
-          <Reveal delay={0.2}>
+          <Reveal delay={0.3}>
             <p className="mt-10 max-w-2xl text-lg text-muted leading-relaxed">
               От исследования рынка до запуска продукта и его развития — покрываем весь цикл создания цифрового продукта.
             </p>
@@ -27,6 +28,22 @@ export default function ServicesPage() {
       <section className="pb-28 md:pb-40">
         <div className="container-x">
           <ServicesGrid />
+        </div>
+      </section>
+
+      <section className="relative py-24 md:py-32 border-t border-line bg-surface2">
+        <div className="container-x">
+          <Reveal className="mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+            <div>
+              <span className="eyebrow">Калькулятор</span>
+              <h2 className="h-display mt-6 text-5xl md:text-6xl">
+                Прикиньте <span className="italic text-muted">стоимость</span>
+              </h2>
+            </div>
+            <p className="text-muted max-w-sm">Интерактивная вилка — подстройте тип проекта, сложность и сроки под свою задачу.</p>
+          </Reveal>
+
+          <PriceEstimator />
         </div>
       </section>
 
