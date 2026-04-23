@@ -80,7 +80,7 @@ function WorkCard({ work, index }: { work: Work; index: number }) {
             <motion.img
               src={work.coverUrl}
               alt={work.title}
-              style={{ y: imgY, scale: 1.15, viewTransitionName: `work-cover-${work.id}` } as React.CSSProperties}
+              style={{ y: imgY, scale: 1.15, viewTransitionName: `work-cover-${work.id}` } as any}
               className="absolute inset-0 h-full w-full object-cover"
             />
           ) : (

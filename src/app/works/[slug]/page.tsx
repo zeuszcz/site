@@ -70,7 +70,7 @@ export default async function WorkPage({ params }: { params: Promise<{ slug: str
                   <img
                     src={work.coverUrl}
                     alt={work.title}
-                    style={{ viewTransitionName: `work-cover-${work.id}` } as React.CSSProperties}
+                    style={{ viewTransitionName: `work-cover-${work.id}` } as any}
                     className="h-full w-full object-cover"
                   />
                 </div>
