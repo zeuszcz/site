@@ -5,7 +5,7 @@ import Reveal from '@/components/Reveal';
 import Marquee from '@/components/Marquee';
 import Counter from '@/components/Counter';
 import MagneticButton from '@/components/MagneticButton';
-import Link from 'next/link';
+import Process from '@/components/Process';
 import { listWorks } from '@/lib/storage';
 
 export const dynamic = 'force-dynamic';
@@ -19,7 +19,7 @@ export default async function HomePage() {
       <Hero />
 
       <section className="relative py-10 md:py-14 border-y border-line bg-surface2">
-        <Marquee items={brands} speed={45} />
+        <Marquee items={brands} baseSpeed={60} />
       </section>
 
       <section id="services" className="relative py-28 md:py-40 border-b border-line">
@@ -52,10 +52,25 @@ export default async function HomePage() {
         </div>
       </section>
 
+      <section className="relative py-28 md:py-40 border-b border-line">
+        <div className="container-x">
+          <Reveal className="mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+            <div>
+              <span className="eyebrow">03 — Процесс</span>
+              <h2 className="h-display mt-5 text-5xl md:text-7xl max-w-3xl">
+                Как мы <span className="italic text-muted">работаем</span>
+              </h2>
+            </div>
+            <p className="text-muted max-w-sm shrink-0">Прозрачный процесс с демо раз в неделю — клиент видит, куда движется проект.</p>
+          </Reveal>
+          <Process />
+        </div>
+      </section>
+
       <section className="relative py-28">
         <div className="container-x">
           <Reveal className="mb-12">
-            <span className="eyebrow">03 — Цифры</span>
+            <span className="eyebrow">04 — Цифры</span>
           </Reveal>
           <div className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-line border-y border-line">
             <Reveal className="p-10 md:p-14">

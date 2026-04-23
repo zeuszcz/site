@@ -12,11 +12,11 @@ type Props = {
 };
 
 const charVariants: Variants = {
-  hidden: { y: '100%', opacity: 0 },
+  hidden: { y: '0.5em', opacity: 0 },
   visible: (i: number) => ({
     y: 0,
     opacity: 1,
-    transition: { duration: 0.7, delay: i, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.65, delay: i, ease: [0.22, 1, 0.36, 1] },
   }),
 };
 
@@ -44,17 +44,17 @@ export default function SplitText({
             {chars.map((c, ci) => {
               const myDelay = delay + (charIndex++) * speed;
               return (
-                <span key={ci} className="inline-block overflow-hidden align-baseline">
-                  <motion.span
-                    custom={myDelay}
-                    variants={charVariants}
-                    initial="hidden"
-                    animate={inView ? 'visible' : 'hidden'}
-                    className={`inline-block ${italic ? 'italic' : ''}`}
-                  >
-                    {c}
-                  </motion.span>
-                </span>
+                <motion.span
+                  key={ci}
+                  custom={myDelay}
+                  variants={charVariants}
+                  initial="hidden"
+                  animate={inView ? 'visible' : 'hidden'}
+                  className={`inline-block ${italic ? 'italic' : ''}`}
+                  style={{ paddingBottom: italic ? '0.12em' : undefined }}
+                >
+                  {c}
+                </motion.span>
               );
             })}
           </span>

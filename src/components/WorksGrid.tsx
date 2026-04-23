@@ -74,7 +74,7 @@ function WorkCard({ work, index }: { work: Work; index: number }) {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: Math.min(index * 0.05, 0.3), ease: [0.22, 1, 0.36, 1] }}
     >
-      <Link href={`/works/${work.slug}`} className="group block" data-cursor-hover>
+      <Link href={`/works/${work.slug}`} className="group block" data-cursor-hover data-cursor-label="VIEW">
         <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-line bg-surface2">
           {work.coverUrl ? (
             <motion.img
