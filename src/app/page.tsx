@@ -28,7 +28,7 @@ export default async function HomePage() {
           <Reveal className="mb-16 md:mb-20 max-w-3xl">
             <span className="eyebrow">Услуги</span>
             <h2 className="h-display mt-6 text-[clamp(2.5rem,5.5vw,5rem)] leading-[1.05] tracking-[-0.025em]">
-              Полный цикл <span className="italic text-muted">— под ключ</span>
+              Полный цикл <span className="italic text-olive">— под ключ</span>
             </h2>
             <p className="mt-6 text-lg text-muted leading-[1.6] max-w-xl">
               От исследования задачи до запуска продукта и его развития.
@@ -44,7 +44,7 @@ export default async function HomePage() {
             <div>
               <span className="eyebrow">Работы</span>
               <h2 className="h-display mt-6 text-[clamp(2.5rem,5.5vw,5rem)] leading-[1.05] tracking-[-0.025em]">
-                Избранное <span className="italic text-muted">из портфолио</span>
+                Избранное <span className="italic text-olive">из портфолио</span>
               </h2>
             </div>
             <MagneticButton href="/works" className="btn-ghost shrink-0">Все работы</MagneticButton>
@@ -58,7 +58,7 @@ export default async function HomePage() {
           <Reveal className="mb-16 md:mb-20 max-w-3xl">
             <span className="eyebrow">Процесс</span>
             <h2 className="h-display mt-6 text-[clamp(2.5rem,5.5vw,5rem)] leading-[1.05] tracking-[-0.025em]">
-              Как мы <span className="italic text-muted">работаем</span>
+              Как мы <span className="italic text-olive">работаем</span>
             </h2>
             <p className="mt-6 text-lg text-muted leading-[1.6] max-w-xl">
               Прозрачный процесс с демо раз в неделю — клиент видит, куда движется проект.
@@ -68,12 +68,12 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="relative py-32 md:py-44 bg-surface2">
+      <section className="relative py-32 md:py-44 bg-olive-soft">
         <div className="container-x">
           <Reveal className="mb-16 md:mb-20 max-w-3xl">
             <span className="eyebrow">Отзывы</span>
             <h2 className="h-display mt-6 text-[clamp(2.5rem,5.5vw,5rem)] leading-[1.05] tracking-[-0.025em]">
-              Что говорят <span className="italic text-muted">клиенты</span>
+              Что говорят <span className="italic text-olive">клиенты</span>
             </h2>
           </Reveal>
           <Testimonials />
@@ -110,7 +110,7 @@ export default async function HomePage() {
           <Reveal>
             <h2 className="h-display text-[clamp(2.5rem,6vw,5.5rem)] leading-[1.05] tracking-[-0.03em]">
               Готовы обсудить <br/>
-              <span className="italic text-muted">ваш проект?</span>
+              <span className="italic text-olive">ваш проект?</span>
             </h2>
           </Reveal>
           <Reveal delay={0.1}>

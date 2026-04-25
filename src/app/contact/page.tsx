@@ -14,7 +14,7 @@ export default function ContactPage() {
           <h1 className="h-display mt-8 text-[clamp(3rem,8vw,7rem)] leading-[1.02] tracking-[-0.035em] max-w-5xl">
             <SplitText text="Давайте" />
             <span className="mr-[0.25em]" />
-            <SplitText text="поговорим" delay={0.15} italic className="text-muted" />
+            <SplitText text="поговорим" delay={0.15} italic className="text-olive" />
           </h1>
           <Reveal delay={0.25}>
             <p className="mt-10 max-w-xl text-lg md:text-xl text-muted leading-[1.55]">

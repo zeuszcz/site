@@ -17,7 +17,7 @@ export default async function WorksPage() {
           <h1 className="h-display mt-8 text-[clamp(3rem,8vw,7rem)] leading-[1.02] tracking-[-0.035em]">
             <SplitText text="Наши" />
             <span className="mr-[0.25em]" />
-            <SplitText text="работы" delay={0.12} italic className="text-muted" />
+            <SplitText text="работы" delay={0.12} italic className="text-olive" />
           </h1>
           <Reveal delay={0.25}>
             <p className="mt-10 max-w-2xl text-lg md:text-xl text-muted leading-[1.55]">

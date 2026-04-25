@@ -15,7 +15,7 @@ export default function ServicesPage() {
           <h1 className="h-display mt-8 text-[clamp(3rem,8vw,7rem)] leading-[1.02] max-w-5xl tracking-[-0.035em]">
             <SplitText text="Что мы" />
             <span className="mr-[0.25em]" />
-            <SplitText text="делаем" delay={0.12} italic className="text-muted" />
+            <SplitText text="делаем" delay={0.12} italic className="text-olive" />
           </h1>
           <Reveal delay={0.25}>
             <p className="mt-10 max-w-2xl text-lg md:text-xl text-muted leading-[1.55]">
@@ -36,7 +36,7 @@ export default function ServicesPage() {
           <Reveal className="mb-16 md:mb-20 max-w-3xl">
             <span className="eyebrow">Калькулятор</span>
             <h2 className="h-display mt-6 text-[clamp(2.5rem,5.5vw,5rem)] leading-[1.05] tracking-[-0.025em]">
-              Прикиньте <span className="italic text-muted">стоимость</span>
+              Прикиньте <span className="italic text-olive">стоимость</span>
             </h2>
             <p className="mt-6 text-lg text-muted leading-[1.55] max-w-xl">
               Интерактивная вилка — настройте тип проекта, сложность и сроки под свою задачу.
@@ -51,7 +51,7 @@ export default function ServicesPage() {
           <Reveal>
             <h2 className="h-display text-[clamp(2.5rem,6vw,5.5rem)] leading-[1.05] tracking-[-0.03em]">
               Нужна помощь <br />
-              <span className="italic text-muted">с проектом?</span>
+              <span className="italic text-olive">с проектом?</span>
             </h2>
           </Reveal>
           <Reveal delay={0.15}>

@@ -14,7 +14,7 @@ export default function InsightsPage() {
           <h1 className="h-display mt-8 text-[clamp(3rem,7.5vw,6.5rem)] leading-[1.03] max-w-5xl tracking-[-0.035em]">
             <SplitText text="Мысли" />
             <br />
-            <SplitText text="в процессе" delay={0.18} italic className="text-muted" />
+            <SplitText text="в процессе" delay={0.18} italic className="text-olive" />
           </h1>
           <Reveal delay={0.3}>
             <p className="mt-10 max-w-2xl text-lg md:text-xl text-muted leading-[1.55]">
@@ -34,7 +34,7 @@ export default function InsightsPage() {
         <div className="container-x max-w-3xl text-center">
           <Reveal>
             <h2 className="h-display text-[clamp(2rem,5vw,4rem)] leading-[1.08]">
-              Подписка <span className="italic text-muted">на наши мысли</span>
+              Подписка <span className="italic text-olive">на наши мысли</span>
             </h2>
           </Reveal>
           <Reveal delay={0.1}>

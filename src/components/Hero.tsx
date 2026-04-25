@@ -30,7 +30,7 @@ export default function Hero() {
           <br />
           <SplitText text="которые" speed={0.02} delay={0.16} />
           <span className="mr-[0.25em]" />
-          <SplitText text="звучат." speed={0.02} delay={0.3} italic className="text-muted" />
+          <SplitText text="звучат." speed={0.02} delay={0.3} italic className="text-olive" />
         </h1>
 
         <div className="mt-12 md:mt-16 grid md:grid-cols-[1fr_auto] gap-8 md:gap-16 items-end max-w-5xl">

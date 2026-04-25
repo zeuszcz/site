@@ -25,7 +25,7 @@ export default function CareersPage() {
           <h1 className="h-display mt-8 text-[clamp(3rem,7.5vw,6.5rem)] leading-[1.03] max-w-5xl tracking-[-0.035em]">
             <SplitText text="Присоединяйтесь" />
             <br />
-            <SplitText text="к команде" delay={0.2} italic className="text-muted" />
+            <SplitText text="к команде" delay={0.2} italic className="text-olive" />
           </h1>
           <Reveal delay={0.3}>
             <p className="mt-10 max-w-2xl text-lg md:text-xl text-muted leading-[1.55]">
@@ -75,7 +75,7 @@ export default function CareersPage() {
           <Reveal className="mb-16 md:mb-20 max-w-3xl">
             <span className="eyebrow">Что мы предлагаем</span>
             <h2 className="h-display mt-6 text-[clamp(2.5rem,5vw,4.5rem)] leading-[1.05] tracking-[-0.025em]">
-              Условия, которые <span className="italic text-muted">реально работают</span>
+              Условия, которые <span className="italic text-olive">реально работают</span>
             </h2>
           </Reveal>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-line border border-line rounded-2xl overflow-hidden">
@@ -95,7 +95,7 @@ export default function CareersPage() {
         <div className="container-x max-w-3xl text-center">
           <Reveal>
             <h2 className="h-display text-[clamp(2.5rem,6vw,5rem)] leading-[1.05] tracking-[-0.03em]">
-              Не нашли <span className="italic text-muted">подходящую вакансию?</span>
+              Не нашли <span className="italic text-olive">подходящую вакансию?</span>
             </h2>
           </Reveal>
           <Reveal delay={0.1}>

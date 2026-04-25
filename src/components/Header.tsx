@@ -60,7 +60,7 @@ export default function Header() {
                 {active && (
                   <motion.span
                     layoutId="nav-active"
-                    className="absolute -bottom-1.5 left-0 h-[1px] w-full bg-fg"
+                    className="absolute -bottom-1.5 left-0 h-[1px] w-full bg-olive"
                     transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                   />
                 )}

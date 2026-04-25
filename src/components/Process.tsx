@@ -20,7 +20,7 @@ export default function Process() {
       <div className="absolute left-[60px] md:left-[80px] top-0 bottom-0 w-px bg-line hidden sm:block" />
       <motion.div
         style={{ height: lineY }}
-        className="absolute left-[60px] md:left-[80px] top-0 w-px bg-fg origin-top hidden sm:block"
+        className="absolute left-[60px] md:left-[80px] top-0 w-px bg-olive origin-top hidden sm:block"
       />
 
       {steps.map((s, i) => (
@@ -45,7 +45,7 @@ function ProcessStep({ step, index }: { step: { n: string; title: string; body: 
     >
       <motion.div
         style={{ scale: dotScale }}
-        className="absolute left-[54px] md:left-[74px] top-[54px] md:top-[74px] h-3 w-3 rounded-full bg-fg z-10 hidden sm:block"
+        className="absolute left-[54px] md:left-[74px] top-[54px] md:top-[74px] h-3 w-3 rounded-full bg-olive z-10 hidden sm:block"
       />
 
       <div className="font-mono text-xs md:text-sm text-muted pt-1">{step.n}</div>

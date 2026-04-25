@@ -5,14 +5,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bg: '#FAF8F5',        // linen
-        surface: '#FFFFFF',    // cards
-        surface2: '#F5F2EC',   // subtle off-cream
-        line: '#E8E4DE',       // hairline
-        fg: '#141414',         // ink
-        muted: '#5C5C5C',      // secondary
-        accent: '#2B2B2B',     // graphite
-        accent2: '#8B2F2F',    // warm warning (used sparingly)
+        bg: '#FAF8F5',
+        surface: '#FFFFFF',
+        surface2: '#F5F2EC',
+        line: '#E8E4DE',
+        fg: '#141414',
+        muted: '#5C5C5C',
+        accent: '#2B2B2B',
+        accent2: '#8B2F2F',
+        olive: '#5C5F3D',
+        'olive-soft': '#EFEDDB',
+        'olive-line': '#D9D7B8',
       },
       fontFamily: {
         sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],

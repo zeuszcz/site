@@ -30,7 +30,7 @@ export default function AboutPage() {
           <h1 className="h-display mt-8 text-[clamp(3rem,8vw,7rem)] leading-[1.02] max-w-5xl tracking-[-0.035em] text-fg">
             <SplitText text="Команда, которая" speed={0.02} />
             <br />
-            <SplitText text="звучит чётко" speed={0.02} delay={0.22} italic className="text-muted" />
+            <SplitText text="звучит чётко" speed={0.02} delay={0.22} italic className="text-olive" />
           </h1>
           <Reveal delay={0.25}>
             <p className="mt-10 max-w-2xl text-lg md:text-xl text-muted leading-[1.55]">
@@ -59,7 +59,7 @@ export default function AboutPage() {
             <div>
               <span className="eyebrow">Команда</span>
               <h2 className="h-display mt-6 text-[clamp(2.5rem,5.5vw,5rem)] leading-[1.05] tracking-[-0.025em]">
-                14 человек <span className="italic text-muted">в студии</span>
+                14 человек <span className="italic text-olive">в студии</span>
               </h2>
             </div>
             <MagneticButton href="/careers" className="btn-ghost shrink-0">Открытые вакансии</MagneticButton>
@@ -73,14 +73,14 @@ export default function AboutPage() {
           <Reveal className="mb-16 md:mb-20 max-w-3xl">
             <span className="eyebrow">Путь студии</span>
             <h2 className="h-display mt-6 text-[clamp(2.5rem,5.5vw,5rem)] leading-[1.05] tracking-[-0.025em]">
-              От 3 до 14 <span className="italic text-muted">за 6 лет</span>
+              От 3 до 14 <span className="italic text-olive">за 6 лет</span>
             </h2>
           </Reveal>
           <div className="grid md:grid-cols-4 gap-px bg-line border border-line rounded-2xl overflow-hidden">
             {milestones.map((m, i) => (
               <Reveal key={m.year} delay={i * 0.06}>
                 <div className="bg-surface p-8 md:p-10 h-full">
-                  <div className="font-mono text-sm text-fg mb-4">{m.year}</div>
+                  <div className="font-mono text-sm text-olive mb-4">{m.year}</div>
                   <h3 className="h-display text-xl mb-3 leading-[1.2]">{m.title}</h3>
                   <p className="text-sm text-muted leading-[1.6]">{m.body}</p>
                 </div>
@@ -95,7 +95,7 @@ export default function AboutPage() {
           <Reveal className="mb-16 md:mb-20 max-w-3xl">
             <span className="eyebrow">Награды</span>
             <h2 className="h-display mt-6 text-[clamp(2.5rem,5.5vw,5rem)] leading-[1.05] tracking-[-0.025em]">
-              Нас заметили <span className="italic text-muted">здесь</span>
+              Нас заметили <span className="italic text-olive">здесь</span>
             </h2>
           </Reveal>
           <Awards />
@@ -107,7 +107,7 @@ export default function AboutPage() {
           <Reveal className="mb-16 md:mb-20 max-w-3xl">
             <span className="eyebrow">FAQ</span>
             <h2 className="h-display mt-6 text-[clamp(2.5rem,5.5vw,5rem)] leading-[1.05] tracking-[-0.025em]">
-              Часто <span className="italic text-muted">спрашивают</span>
+              Часто <span className="italic text-olive">спрашивают</span>
             </h2>
           </Reveal>
           <FAQ />
@@ -119,7 +119,7 @@ export default function AboutPage() {
           <Reveal>
             <h2 className="h-display text-[clamp(2.5rem,6vw,5.5rem)] leading-[1.05] tracking-[-0.03em]">
               Расскажите о вашем <br />
-              <span className="italic text-muted">проекте</span>
+              <span className="italic text-olive">проекте</span>
             </h2>
           </Reveal>
           <Reveal delay={0.15}>

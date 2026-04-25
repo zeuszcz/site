@@ -63,7 +63,7 @@ html.lenis, html.lenis body { height: auto; }
   }
   .eyebrow::before {
     content: '';
-    @apply inline-block h-[1px] w-8 bg-fg;
+    @apply inline-block h-[1px] w-8 bg-olive;
   }
 
   .h-display {
