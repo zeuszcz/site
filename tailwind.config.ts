@@ -13,9 +13,9 @@ const config: Config = {
         muted: '#5C5C5C',
         accent: '#2B2B2B',
         accent2: '#8B2F2F',
-        olive: '#5C5F3D',
-        'olive-soft': '#EFEDDB',
-        'olive-line': '#D9D7B8',
+        olive: '#8B9258',
+        'olive-soft': '#EFEEC8',
+        'olive-line': '#D8D6A8',
       },
       fontFamily: {
         sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],

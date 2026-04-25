@@ -31,12 +31,12 @@ html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
 .lenis.lenis-stopped { overflow: hidden; }
 
-::selection { background: #5C5F3D; color: #FAF8F5; }
+::selection { background: #8B9258; color: #FAF8F5; }
 
 ::-webkit-scrollbar { width: 10px; height: 10px; }
 ::-webkit-scrollbar-track { background: #FAF8F5; }
-::-webkit-scrollbar-thumb { background: #D9D7B8; border-radius: 5px; }
-::-webkit-scrollbar-thumb:hover { background: #5C5F3D; }
+::-webkit-scrollbar-thumb { background: #D8D6A8; border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: #8B9258; }
 
 @layer components {
   .container-x {
