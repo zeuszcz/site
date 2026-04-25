@@ -43,16 +43,16 @@ export default function InboxView({ data }: Props) {
             <button
               key={t.id}
               onClick={() => { setTab(t.id); setSearch(''); }}
-              className={`bg-surface p-5 md:p-6 text-left transition-colors ${active ? 'bg-surface2' : 'hover:bg-surface2/50'}`}
+              className={`p-5 md:p-6 text-left transition-colors ${active ? 'bg-olive-soft' : 'bg-surface hover:bg-olive-soft/40'}`}
             >
               <div className="flex items-center justify-between mb-3">
-                <div className={`flex h-9 w-9 items-center justify-center rounded-lg ${active ? 'bg-fg text-bg' : 'bg-surface2 text-muted'}`}>
+                <div className={`flex h-9 w-9 items-center justify-center rounded-lg ${active ? 'bg-olive text-bg' : 'bg-surface2 text-muted'}`}>
                   <Icon size={15} strokeWidth={1.5} />
                 </div>
-                {active && <div className="h-1.5 w-1.5 rounded-full bg-fg" />}
+                {active && <div className="h-1.5 w-1.5 rounded-full bg-olive" />}
               </div>
               <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted mb-1">{t.label}</div>
-              <div className="h-display text-3xl md:text-4xl tabular-nums">{counts[t.id]}</div>
+              <div className={`h-display text-3xl md:text-4xl tabular-nums ${active ? 'text-olive' : 'text-fg'}`}>{counts[t.id]}</div>
             </button>
           );
         })}

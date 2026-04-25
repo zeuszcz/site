@@ -67,7 +67,7 @@ export default function ContactForm() {
           required
           rows={5}
           maxLength={5000}
-          className="w-full bg-transparent border-b border-line focus:border-fg outline-none py-3 text-[17px] transition-colors resize-none"
+          className="w-full bg-transparent border-b border-line focus:border-olive outline-none py-3 text-[17px] transition-colors resize-none"
         />
       </div>
       {error && <p className="text-sm text-accent2">{error}</p>}
@@ -92,7 +92,7 @@ function Field({ label, name, type = 'text', required }: { label: string; name: 
         type={type}
         required={required}
         maxLength={200}
-        className="w-full bg-transparent border-b border-line focus:border-fg outline-none py-3 text-[17px] transition-colors"
+        className="w-full bg-transparent border-b border-line focus:border-olive outline-none py-3 text-[17px] transition-colors"
       />
     </div>
   );

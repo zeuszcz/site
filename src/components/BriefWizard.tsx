@@ -111,7 +111,7 @@ export default function BriefWizard() {
           initial={false}
           animate={{ width: `${progress}%` }}
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="absolute inset-y-0 left-0 bg-fg"
+          className="absolute inset-y-0 left-0 bg-olive"
         />
       </div>
 
@@ -134,8 +134,8 @@ export default function BriefWizard() {
                     onClick={() => update('type', t.id)}
                     className={`text-left p-6 rounded-2xl border-2 transition-all ${
                       data.type === t.id
-                        ? 'border-fg bg-surface'
-                        : 'border-line hover:border-fg/50 bg-surface2/50'
+                        ? 'border-olive bg-olive-soft/60'
+                        : 'border-line hover:border-olive/50 bg-surface2/50'
                     }`}
                   >
                     <div className="h-display text-xl mb-1">{t.label}</div>
@@ -159,7 +159,7 @@ export default function BriefWizard() {
                 onChange={(e) => update('goal', e.target.value)}
                 placeholder="Нам нужно..."
                 maxLength={3000}
-                className="w-full bg-surface border border-line rounded-xl p-5 focus:border-fg outline-none transition-colors text-[16px] leading-[1.55] resize-none"
+                className="w-full bg-surface border border-line rounded-xl p-5 focus:border-olive outline-none transition-colors text-[16px] leading-[1.55] resize-none"
               />
               <div className="mt-2 text-xs text-muted font-mono">{data.goal.length} / 3000</div>
             </>
@@ -179,8 +179,8 @@ export default function BriefWizard() {
                       onClick={() => update('timeline', t)}
                       className={`px-4 py-2.5 rounded-full text-sm transition-all ${
                         data.timeline === t
-                          ? 'bg-fg text-bg'
-                          : 'border border-line text-fg hover:border-fg'
+                          ? 'bg-olive text-bg'
+                          : 'border border-line text-fg hover:border-olive hover:text-olive'
                       }`}
                     >
                       {t}
@@ -198,8 +198,8 @@ export default function BriefWizard() {
                       onClick={() => update('budget', b)}
                       className={`px-4 py-2.5 rounded-full text-sm transition-all ${
                         data.budget === b
-                          ? 'bg-fg text-bg'
-                          : 'border border-line text-fg hover:border-fg'
+                          ? 'bg-olive text-bg'
+                          : 'border border-line text-fg hover:border-olive hover:text-olive'
                       }`}
                     >
                       {b}
@@ -283,7 +283,7 @@ function WizardInput({ label, value, onChange, type = 'text', placeholder, autoF
         placeholder={placeholder}
         autoFocus={autoFocus}
         maxLength={200}
-        className="w-full bg-transparent border-b border-line focus:border-fg outline-none py-3 text-[17px] transition-colors"
+        className="w-full bg-transparent border-b border-line focus:border-olive outline-none py-3 text-[17px] transition-colors"
       />
     </div>
   );

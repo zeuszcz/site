@@ -47,7 +47,7 @@ export default function Testimonials() {
             transition={{ duration: 0.4, delay: 0.1 }}
             className="mt-12 flex items-center gap-4"
           >
-            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-fg text-bg font-display font-medium text-sm">
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-olive text-bg font-display font-medium text-sm">
               {t.initials}
             </div>
             <div>

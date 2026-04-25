@@ -86,8 +86,8 @@ export default function BookCall() {
                   onClick={() => { setDay(d); setSlot(null); }}
                   className={`p-4 rounded-xl border text-center transition-all ${
                     selected
-                      ? 'border-fg bg-fg text-bg'
-                      : 'border-line hover:border-fg/50 bg-surface'
+                      ? 'border-olive bg-olive text-bg'
+                      : 'border-line hover:border-olive/50 bg-surface'
                   }`}
                 >
                   <div className={`text-[10px] uppercase tracking-widest ${selected ? 'text-bg/70' : 'text-muted'}`}>
@@ -121,8 +121,8 @@ export default function BookCall() {
                     onClick={() => setSlot(s)}
                     className={`px-5 py-2.5 rounded-full text-sm transition-all ${
                       slot === s
-                        ? 'bg-fg text-bg'
-                        : 'border border-line text-fg hover:border-fg'
+                        ? 'bg-olive text-bg'
+                        : 'border border-line text-fg hover:border-olive hover:text-olive'
                     }`}
                   >
                     {s}
@@ -208,7 +208,7 @@ function Field({ label, value, onChange, type = 'text' }: {
         value={value}
         onChange={(e) => onChange(e.target.value)}
         maxLength={200}
-        className="w-full bg-transparent border-b border-line focus:border-fg outline-none py-3 text-[16px] transition-colors"
+        className="w-full bg-transparent border-b border-line focus:border-olive outline-none py-3 text-[16px] transition-colors"
       />
     </div>
   );

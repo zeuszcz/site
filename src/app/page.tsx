@@ -84,19 +84,19 @@ export default async function HomePage() {
         <div className="container-x">
           <div className="grid md:grid-cols-3 gap-12 md:gap-16">
             <div>
-              <div className="h-display text-6xl md:text-7xl text-fg tabular-nums">
+              <div className="h-display text-6xl md:text-7xl text-olive tabular-nums">
                 <Counter to={50} suffix="+" />
               </div>
               <p className="mt-4 text-muted">реализованных проектов</p>
             </div>
             <div>
-              <div className="h-display text-6xl md:text-7xl text-fg tabular-nums">
+              <div className="h-display text-6xl md:text-7xl text-olive tabular-nums">
                 <Counter to={6} />
               </div>
               <p className="mt-4 text-muted">лет на рынке</p>
             </div>
             <div>
-              <div className="h-display text-6xl md:text-7xl text-fg">
+              <div className="h-display text-6xl md:text-7xl text-olive">
                 24<span className="text-muted">/</span>7
               </div>
               <p className="mt-4 text-muted">поддержка клиентов</p>

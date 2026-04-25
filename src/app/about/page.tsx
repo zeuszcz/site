@@ -90,7 +90,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="pb-28 pt-28 border-t border-line">
+      <section className="pb-28 pt-28 border-t border-line bg-olive-soft/40">
         <div className="container-x">
           <Reveal className="mb-16 md:mb-20 max-w-3xl">
             <span className="eyebrow">Награды</span>

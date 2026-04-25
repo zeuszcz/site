@@ -173,11 +173,11 @@ export default function CommandPalette() {
                             onClick={() => execute(it)}
                             onMouseEnter={() => setActive(flatIdx)}
                             className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-left transition-colors ${
-                              isActive ? 'bg-surface2' : ''
+                              isActive ? 'bg-olive-soft' : ''
                             }`}
                           >
-                            <div className="h-8 w-8 rounded-lg bg-surface2 flex items-center justify-center shrink-0">
-                              <Icon size={14} strokeWidth={1.5} className="text-muted" />
+                            <div className={`h-8 w-8 rounded-lg flex items-center justify-center shrink-0 transition-colors ${isActive ? 'bg-olive text-bg' : 'bg-surface2 text-muted'}`}>
+                              <Icon size={14} strokeWidth={1.5} />
                             </div>
                             <div className="flex-1 min-w-0">
                               <div className="text-[14px] truncate">{it.title}</div>

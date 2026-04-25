@@ -31,7 +31,7 @@ export default function WorksGrid({ works }: { works: Work[] }) {
           <button
             onClick={() => setActive('all')}
             className={`text-[11px] uppercase tracking-[0.2em] px-4 py-2 rounded-full border transition-all ${
-              active === 'all' ? 'border-fg text-fg bg-surface' : 'border-line text-muted hover:text-fg hover:border-fg'
+              active === 'all' ? 'border-olive text-olive bg-olive-soft' : 'border-line text-muted hover:text-olive hover:border-olive'
             }`}
           >
             Все
@@ -41,7 +41,7 @@ export default function WorksGrid({ works }: { works: Work[] }) {
               key={c}
               onClick={() => setActive(c)}
               className={`text-[11px] uppercase tracking-[0.2em] px-4 py-2 rounded-full border transition-all ${
-                active === c ? 'border-fg text-fg bg-surface' : 'border-line text-muted hover:text-fg hover:border-fg'
+                active === c ? 'border-olive text-olive bg-olive-soft' : 'border-line text-muted hover:text-olive hover:border-olive'
               }`}
             >
               {c}
@@ -92,7 +92,7 @@ function WorkCard({ work, index }: { work: Work; index: number }) {
             <span className="text-[11px] font-mono text-muted">{new Date(work.createdAt).getFullYear()}</span>
           </div>
           <div className="flex items-start justify-between gap-4">
-            <h3 className="h-display text-xl md:text-2xl text-fg group-hover:text-muted transition-colors duration-300 flex-1">
+            <h3 className="h-display text-xl md:text-2xl text-fg group-hover:text-olive transition-colors duration-300 flex-1">
               {work.title}
             </h3>
             <ArrowUpRight

@@ -64,17 +64,17 @@ function StatCard({ label, value }: { label: string; value: number }) {
 
 function InboxStat({ icon: Icon, label, value }: { icon: typeof Mail; label: string; value: number }) {
   return (
-    <div className="bg-surface p-8 transition-colors group-hover:bg-surface2/60">
+    <div className="bg-surface p-8 transition-colors group-hover:bg-olive-soft/40">
       <div className="flex items-start justify-between mb-6">
-        <div className="h-9 w-9 rounded-lg bg-surface2 flex items-center justify-center text-muted">
+        <div className={`h-9 w-9 rounded-lg flex items-center justify-center transition-colors ${value > 0 ? 'bg-olive text-bg' : 'bg-surface2 text-muted'}`}>
           <Icon size={15} strokeWidth={1.5} />
         </div>
         {value > 0 && (
-          <div className="font-mono text-[10px] uppercase tracking-widest text-muted">new</div>
+          <div className="font-mono text-[10px] uppercase tracking-widest text-olive">new</div>
         )}
       </div>
       <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted mb-1">{label}</div>
-      <div className="h-display text-4xl md:text-5xl tabular-nums">{value}</div>
+      <div className={`h-display text-4xl md:text-5xl tabular-nums ${value > 0 ? 'text-olive' : 'text-fg'}`}>{value}</div>
     </div>
   );
 }

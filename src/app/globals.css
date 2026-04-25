@@ -31,12 +31,12 @@ html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
 .lenis.lenis-stopped { overflow: hidden; }
 
-::selection { background: #141414; color: #FAF8F5; }
+::selection { background: #5C5F3D; color: #FAF8F5; }
 
 ::-webkit-scrollbar { width: 10px; height: 10px; }
 ::-webkit-scrollbar-track { background: #FAF8F5; }
-::-webkit-scrollbar-thumb { background: #E8E4DE; border-radius: 5px; }
-::-webkit-scrollbar-thumb:hover { background: #5C5C5C; }
+::-webkit-scrollbar-thumb { background: #D9D7B8; border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: #5C5F3D; }
 
 @layer components {
   .container-x {
@@ -48,14 +48,17 @@ html.lenis, html.lenis body { height: auto; }
            transition-all duration-300 ease-out will-change-transform;
   }
   .btn-primary {
-    @apply btn bg-fg text-bg hover:scale-[1.02] active:scale-[0.98];
+    @apply btn bg-fg text-bg hover:bg-olive hover:scale-[1.02] active:scale-[0.98];
   }
   .btn-ghost {
-    @apply btn border border-line text-fg hover:border-fg;
+    @apply btn border border-line text-fg hover:border-olive hover:text-olive;
   }
 
   .card {
     @apply relative rounded-2xl border border-line bg-surface transition-all duration-500;
+  }
+  .card:hover {
+    @apply border-olive/40;
   }
 
   .eyebrow {

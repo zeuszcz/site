@@ -49,7 +49,7 @@ export default function WorkForm({ initial }: Props) {
       <div>
         <label className="text-[10px] uppercase tracking-[0.22em] text-muted mb-2 block">Полное описание</label>
         <textarea name="description" rows={8} required defaultValue={initial?.description}
-                  className="w-full bg-surface border border-line rounded-xl p-4 focus:border-fg outline-none transition-colors text-fg" />
+                  className="w-full bg-surface border border-line rounded-xl p-4 focus:border-olive outline-none transition-colors text-fg" />
       </div>
 
       <div>
@@ -119,7 +119,7 @@ function Field({ label, name, required, defaultValue, hint }: {
     <div>
       <label className="text-[10px] uppercase tracking-[0.22em] text-muted mb-2 block">{label}{required && ' *'}</label>
       <input name={name} required={required} defaultValue={defaultValue}
-             className="w-full bg-surface border border-line rounded-xl px-4 py-3 focus:border-fg outline-none transition-colors text-fg" />
+             className="w-full bg-surface border border-line rounded-xl px-4 py-3 focus:border-olive outline-none transition-colors text-fg" />
       {hint && <p className="mt-1 text-xs text-muted">{hint}</p>}
     </div>
   );

@@ -32,7 +32,7 @@ export default async function AdminWorksList() {
                 </div>
                 <div className="min-w-0 flex-1">
                   <div className="flex items-center gap-3 mb-1">
-                    <span className={`text-[10px] uppercase tracking-[0.2em] px-2 py-1 rounded-full border ${w.published ? 'border-fg text-fg bg-surface' : 'border-line text-muted'}`}>
+                    <span className={`text-[10px] uppercase tracking-[0.2em] px-2 py-1 rounded-full border ${w.published ? 'border-olive text-olive bg-olive-soft' : 'border-line text-muted'}`}>
                       {w.published ? 'опубликовано' : 'черновик'}
                     </span>
                     <span className="text-[10px] font-mono tracking-widest uppercase text-muted">{w.category || '—'}</span>

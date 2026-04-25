@@ -59,13 +59,13 @@ export default function Newsletter() {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="your@email.com"
               maxLength={200}
-              className="flex-1 min-w-0 bg-transparent border-b border-line focus:border-fg outline-none py-2.5 text-[14px] transition-colors"
+              className="flex-1 min-w-0 bg-transparent border-b border-line focus:border-olive outline-none py-2.5 text-[14px] transition-colors"
             />
             <button
               type="submit"
               disabled={status === 'sending'}
               aria-label="Подписаться"
-              className="h-10 w-10 shrink-0 rounded-full bg-fg text-bg flex items-center justify-center hover:scale-105 active:scale-95 transition-transform disabled:opacity-50"
+              className="h-10 w-10 shrink-0 rounded-full bg-olive text-bg flex items-center justify-center hover:scale-105 active:scale-95 transition-transform disabled:opacity-50"
             >
               <ArrowRight size={14} strokeWidth={1.5} />
             </button>

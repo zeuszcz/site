@@ -4,7 +4,7 @@ export default function NotFound() {
   return (
     <div className="min-h-screen flex items-center justify-center pt-24">
       <div className="container-x text-center">
-        <div className="h-display text-[22vw] md:text-[14rem] leading-none text-fg italic">404</div>
+        <div className="h-display text-[22vw] md:text-[14rem] leading-none text-olive italic">404</div>
         <p className="text-xl text-muted mt-6">Страница не найдена</p>
         <Link href="/" className="btn-primary mt-10 inline-flex">На главную</Link>
       </div>

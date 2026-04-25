@@ -58,8 +58,8 @@ export default function PriceEstimator() {
                 data-cursor-hover
                 className={`px-4 py-2.5 rounded-full text-sm transition-all ${
                   typeId === t.id
-                    ? 'bg-fg text-bg'
-                    : 'border border-line text-muted hover:text-fg hover:border-fg'
+                    ? 'bg-olive text-bg'
+                    : 'border border-line text-muted hover:text-olive hover:border-olive'
                 }`}
               >
                 {t.label}
@@ -98,8 +98,8 @@ export default function PriceEstimator() {
                 data-cursor-hover
                 className={`px-4 py-2.5 rounded-full text-sm transition-all ${
                   timeline === i
-                    ? 'bg-fg text-bg'
-                    : 'border border-line text-muted hover:text-fg hover:border-fg'
+                    ? 'bg-olive text-bg'
+                    : 'border border-line text-muted hover:text-olive hover:border-olive'
                 }`}
               >
                 {t.label}
@@ -125,8 +125,8 @@ export default function PriceEstimator() {
                   data-cursor-hover
                   className={`flex items-center justify-between px-4 py-3 rounded-xl text-left transition-all text-sm ${
                     active
-                      ? 'bg-fg text-bg'
-                      : 'border border-line text-fg hover:border-fg hover:bg-surface2'
+                      ? 'bg-olive text-bg'
+                      : 'border border-line text-fg hover:border-olive hover:text-olive hover:bg-olive-soft/40'
                   }`}
                 >
                   <span>{opt.label}</span>
@@ -146,7 +146,7 @@ export default function PriceEstimator() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
-          className="h-display text-4xl md:text-5xl leading-tight mb-2"
+          className="h-display text-4xl md:text-5xl leading-tight mb-2 text-olive"
         >
           {fmt(low)}
         </motion.div>

@@ -27,8 +27,8 @@ export default function InsightsList() {
               onClick={() => setActive(c)}
               className={`px-4 py-2 rounded-full text-[13px] transition-all ${
                 active === c
-                  ? 'bg-fg text-bg'
-                  : 'border border-line text-muted hover:text-fg hover:border-fg'
+                  ? 'bg-olive text-bg'
+                  : 'border border-line text-muted hover:text-olive hover:border-olive'
               }`}
             >
               {c}
